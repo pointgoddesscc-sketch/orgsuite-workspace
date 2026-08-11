@@ -2,7 +2,7 @@
 
 **Primary professional hub for Point Goddess CC / PSE Management**
 
-This is the recommended repository to clone into **Working Copy** on iPhone and to connect with **ChatGPT Codex**.
+This is the recommended repository to clone into **Working Copy** on iPhone and to remotely control **ChatGPT Codex** via GitHub.
 
 ---
 
@@ -15,59 +15,50 @@ This is the recommended repository to clone into **Working Copy** on iPhone and 
    https://github.com/pointgoddesscc-sketch/orgsuite-workspace.git
    ```
 4. Authenticate with the GitHub account that owns `pointgoddesscc-sketch`
-5. Open the repository — you now have the clean professional workspace
+5. Open the repository — you now have the complete professional workspace
+
+**After any update on GitHub:** open this repository in Working Copy and tap **Pull**.
 
 ---
 
-## Quick Start – ChatGPT Codex
+## Quick Start – Remote ChatGPT Control
 
-1. Open ChatGPT (desktop preferred) signed in as **pointgoddesscc@gmail.com**
-2. Go to **Codex** → Connect **GitHub** plugin
-3. Authorize this repository: `pointgoddesscc-sketch/orgsuite-workspace`
-4. On iPhone: ChatGPT → Codex → **Remote** (pairs with desktop)
+1. **Desktop:** ChatGPT signed in as **pointgoddesscc@gmail.com** → Codex → Connect GitHub plugin → authorize this repository
+2. **iPhone:** ChatGPT → Codex → **Remote** → pair with the desktop session
+3. Now you can control Codex from your phone. Changes flow through GitHub → Working Copy via Pull.
 
-Codex can now create branches and open pull requests against this workspace.
+Full guide: `docs/remote-chatgpt-control.md`
 
 ---
 
-## What lives here
+## What is included
 
 | Path | Purpose |
 |------|---------|
-| `docs/` | Operational guides (sync, Remote, security, connectors) |
-| `connectors/` | Status notes for the live Grok connectors |
-| `projects/` | Links and notes to the main production repositories |
-| `templates/` | Clean starter templates for new work |
-| `AGENTS.md` | Instructions for Codex and other AI coding agents |
+| `docs/remote-chatgpt-control.md` | Full Remote + Working Copy + GitHub control guide |
+| `docs/connectors-status.md` | Live status of all connectors |
+| `docs/git-hooks.md` | How to enable Git hooks for automations |
+| `docs/working-copy-clone.md` | Clone instructions |
+| `.githooks/` | pre-commit (secret protection) + post-merge |
+| `.env.example` | Safe environment template (no secrets) |
+| `AGENTS.md` | Instructions for Codex and AI agents |
+| `.gitignore` | Professional ignore rules |
 
 ---
 
-## Core related repositories
+## Git Hooks for Automations
 
-Clone these individually in Working Copy when you need to work on them:
+On any computer clone:
 
-- **codex** – Main Codex marketing & website foundation  
-  `https://github.com/pointgoddesscc-sketch/codex`
-- **orgsuite-open-source-licenses** – Enterprise license attribution  
-  `https://github.com/pointgoddesscc-sketch/orgsuite-open-source-licenses`
-- **orgsuite-ai-os** – Multi-agent Organisation Intelligence Platform  
-  `https://github.com/pointgoddesscc-sketch/orgsuite-ai-os`
-- **sophbot-sophie-cunningham** / **sophbot** – Fan experience + WhatsApp
-- **super-grok-office** – macOS Office Hub
-- **harmony-ai-spotify-agent** – Spotify agent
-- And other specialised projects visible in your Working Copy list
-
----
-
-## Daily workflow (recommended)
-
-```text
-1. Working Copy → open orgsuite-workspace → Pull
-2. Make changes or use ChatGPT Codex (Remote)
-3. Commit → Push (prefer branch)
-4. Open PR on GitHub → review → merge
-5. Pull again on every device
+```bash
+git config core.hooksPath .githooks
+chmod +x .githooks/*
 ```
+
+- **pre-commit** – blocks common secret patterns
+- **post-merge** – confirmation + reminder to Pull on other devices
+
+Details: `docs/git-hooks.md`
 
 ---
 
@@ -75,15 +66,27 @@ Clone these individually in Working Copy when you need to work on them:
 
 Google Calendar · Calendly · Linear · Outlook · Microsoft Teams · Figma · Notion · Vercel · Gmail · GitHub · Stripe
 
-All are live and wired to `pointgoddesscc@gmail.com`.
+All wired to `pointgoddesscc@gmail.com`. See `docs/connectors-status.md`.
 
 ---
 
-## Security rules
+## Daily professional workflow
 
-- Never commit real API keys, tokens, or secrets
-- Use `.env.example` only as a template
-- Keep OpenAI / xAI keys on-device or in host secret managers
+```text
+1. Working Copy → Pull
+2. ChatGPT Remote (or desktop Codex) → work on the repository
+3. Codex opens a Pull Request
+4. You review & merge on GitHub
+5. Working Copy → Pull again
+```
+
+---
+
+## Security
+
+- Never commit real API keys or tokens
+- Use `.env.example` as the only template
+- Keep keys on-device or in host secret managers
 
 ---
 
@@ -91,4 +94,4 @@ All are live and wired to `pointgoddesscc@gmail.com`.
 **GitHub:** pointgoddesscc-sketch  
 **Linear team:** PSE Management
 
-This workspace is production-ready for professional use with Working Copy and ChatGPT Codex.
+This workspace is fully configured for professional remote control of ChatGPT via GitHub and Working Copy.

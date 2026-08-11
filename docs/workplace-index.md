@@ -3,6 +3,10 @@
 Primary hub: **orgsuite-workspace**  
 Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 
+## AI control plane
+
+**ChatGPT Codex** is authorized to operate on this repository under the workplace rules, including the `AGENTS.md` and `docs/` guidance, with a branch-based, PR-first workflow for real changes.
+
 ## Core Hub (start here)
 
 | Repository | Purpose |

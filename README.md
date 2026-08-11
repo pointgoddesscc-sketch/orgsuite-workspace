@@ -5,6 +5,7 @@
 - Working Copy clone: complete
 - GitHub plugin: authorized with admin access
 - ChatGPT Codex + Remote: connected
+- ChatGPT Codex: connected and following AGENTS.md + docs/ rules
 - GitHub Actions: active
 - Brand avatar: synced across GitHub, GitLab, X, Gravatar, Meta
 - All connectors: live under [pointgoddesscc@gmail.com](mailto:pointgoddesscc@gmail.com)

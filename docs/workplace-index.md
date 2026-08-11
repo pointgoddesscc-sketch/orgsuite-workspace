@@ -1,33 +1,61 @@
-# Workplace Index – OrgSuite
+# Workplace Index – OrgSuite / Point Goddess CC
 
-This is a curated list of the main repositories that form the OrgSuite / Point Goddess CC workplace. Clone only the ones you need into Working Copy.
+Primary hub: **orgsuite-workspace**  
+Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 
-## Primary Hub (start here)
+## Core Hub (start here)
 
-| Repository | Purpose | Clone URL |
-|------------|---------|-----------|
-| **orgsuite-workspace** | Clean professional hub + documentation | `https://github.com/pointgoddesscc-sketch/orgsuite-workspace.git` |
+| Repository | Purpose |
+|------------|---------|
+| **orgsuite-workspace** | Main professional hub for Working Copy + ChatGPT Codex |
 
-## Core Production Repositories
+## Priority Repositories (recommend authorizing in Codex GitHub plugin)
 
-| Repository | Host | Notes |
-|------------|------|-------|
-| codex | GitHub | Main Codex marketing & website foundation |
-| orgsuite-open-source-licenses | GitHub | Enterprise license attribution |
-| orgsuite-ai-os | GitHub | Multi-agent Organisation Intelligence Platform |
-| sophbot / sophbot-sophie-cunningham | GitHub | Fan experience + WhatsApp |
-| super-grok-office | GitHub | macOS Office Hub |
-| harmony-ai-spotify-agent | GitHub | Spotify agent |
-| private-search-ecosystem | GitHub | Search related |
-| private-voice-agent-twilio | GitHub | Voice agent |
+| Repository | Purpose |
+|------------|---------|
+| codex | Main Codex marketing & website foundation |
+| orgsuite-open-source-licenses | Enterprise license attribution |
+| orgsuite-ai-os | Multi-agent Organisation Intelligence Platform |
+| super-grok-office | macOS Office Hub |
+| super-grok / super-grok-app | Grok chat apps |
+| harmony-ai-spotify-agent | Spotify music agent |
+| sophbot / sophbot-sophie-cunningham | Fan experience + WhatsApp |
+| pse-bank-website | PS&E Bank marketing site |
+| pse-wealth-platform | Investment & wealth platform |
+| pse-bank-license-compliance | Bank compliance documentation |
+| orgsuite-scoopz-command-center | Unified AI command center |
+| filelogger-workplace | FileLogger control center |
+| pointgoddess-ai-platform | AI business & marketing platform |
 
-## Other Hosts (GitLab / Bitbucket)
+## Additional Active Repositories
 
-You have additional clones on GitLab and Bitbucket (Codex Org, llm-chat-app-template variants, Safari, etc.). Treat those as secondary. Prefer the GitHub versions under `pointgoddesscc-sketch` as the source of truth when possible.
+| Repository | Purpose |
+|------------|---------|
+| Safari / Nov-Os | Management / AI phone platform |
+| meta-agent / meta-marketing | Meta AI support repos |
+| branded-email-sender | Branded Gmail SMTP sender |
+| on-device-speech-recognition | Voice input marketing site |
+| chrome-credits-open-source | Open-source licenses viewer |
+| apache-2.0-license-kit | License boilerplate kit |
+| collaborative-home-connect | Home device connectivity |
+| nebbote | AI curator & marketing site |
+| kr-management-privacy | Privacy policy pages |
+| gravatar-wordpress-oauth-docs | OAuth documentation |
+| sophie-cunningham-ring-girl | Marketing components |
 
-## Recommendation
+## How to connect more repositories in Codex
 
-1. Keep **orgsuite-workspace** as your daily starting repository in Working Copy.
-2. Clone individual production repositories only when actively working on them.
-3. Always Pull before editing and Push + PR after finishing a unit of work.
-4. Use ChatGPT Remote + GitHub plugin for AI-assisted changes.
+1. Open ChatGPT → Codex → GitHub plugin
+2. Authorize additional repositories from the list above
+3. Prefer starting with the **Priority** group
+4. You can work on one repository at a time or switch context as needed
+
+## Branching Strategy (reminder)
+
+- `main` – production
+- `feat/...` – new features
+- `docs/...` – documentation
+- `fix/...` – fixes
+- `chore/...` – maintenance
+
+Always open a Pull Request. Never push directly to `main` for real work.

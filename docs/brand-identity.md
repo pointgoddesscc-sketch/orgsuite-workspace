@@ -10,8 +10,9 @@ Geometric AI head (wireframe neural network style) used as the unified identity 
 |----------|---------|--------|
 | **GitHub** | `pointgoddesscc-sketch` | ✅ Active – avatar set |
 | **GitLab** | `@pointgoddesscc` | ✅ Active – same photo |
-| **Gravatar** | email `pointgoddesscc@gmail.com` | ✅ Should match |
+| **Gravatar** | email `pointgoddesscc@gmail.com` | ✅ Keep as primary |
 | **Meta / Meta AI** | linked business accounts | ✅ Same visual identity |
+| **X (Twitter)** | *add username when ready* | ⏳ Configure via X API guide |
 
 **GitHub avatar URL (reference):**  
 `https://avatars.githubusercontent.com/u/276164939?v=4`
@@ -22,31 +23,41 @@ Geometric AI head (wireframe neural network style) used as the unified identity 
 
 - Consistent visual identity across Git, AI tools, and social
 - Makes OrgSuite / PSE Management work trackable under one brand face
-- Ready for X (Twitter) API integration under the same identity
-- Avoids fragmented profiles when switching between GitHub, GitLab, ChatGPT, Meta
+- Ready for X API integration under the same identity
+- Avoids fragmented profiles when switching between GitHub, GitLab, ChatGPT, Meta, X
 
 ---
 
-## How to keep them in sync
+## Avatar synchronization
 
-1. **Gravatar** (controls many sites including some Git defaults)  
-   - Go to [gravatar.com](https://gravatar.com)  
-   - Sign in with `pointgoddesscc@gmail.com`  
-   - Upload the same geometric AI head image  
-   - Set as primary
+**Full guide:** `docs/x-api-tracking.md`
 
-2. **GitHub**  
-   - Settings → Profile → upload the same image (already set)
+**Quick rule:** One master image file → upload to every platform in the table above.  
+Do not use third-party cookie or avatar bots. Update Gravatar first when possible.
 
-3. **GitLab**  
-   - Preferences → Profile → upload the same image (already set per your screenshot)
+| Platform | Where to update |
+|----------|-----------------|
+| Gravatar | gravatar.com → primary image for `pointgoddesscc@gmail.com` |
+| GitHub | Settings → Profile |
+| GitLab | Preferences → Profile |
+| Meta | Page / profile picture |
+| X | Profile photo (same file) |
 
-4. **Meta**  
-   - Use the same image on Page / profile used for Meta AI integrations
+---
 
-5. **X (Twitter)** – when you add X API  
-   - Use the same image on the X profile that will hold the API app  
-   - Document the X username and App ID in this file when ready
+## X API tracking
+
+See **`docs/x-api-tracking.md`** for:
+
+- Creating the X developer app
+- Safe env var template (never commit secrets)
+- Trackability fields (username, App ID)
+- Workplace tracking goals
+
+When your X app exists, send:
+- X username
+- App ID  
+and they will be recorded here for workplace tracking.
 
 ---
 
@@ -59,7 +70,8 @@ Geometric AI head (wireframe neural network style) used as the unified identity 
 | GitLab | `@pointgoddesscc` |
 | Display name | Point Goddess CC / point Goddess cc |
 | Avatar | Geometric AI head (shared) |
-| X API | *Add username + app details here when created* |
+| X username | *pending* |
+| X App ID | *pending* |
 
 ---
 
@@ -68,6 +80,7 @@ Geometric AI head (wireframe neural network style) used as the unified identity 
 - `docs/workplace-index.md` – repository index
 - `docs/connectors-status.md` – live connectors
 - `docs/remote-chatgpt-control.md` – Remote + Codex
+- `docs/x-api-tracking.md` – X API + avatar sync
 
 **Account:** pointgoddesscc@gmail.com  
 **Hub:** orgsuite-workspace

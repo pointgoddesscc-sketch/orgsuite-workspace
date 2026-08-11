@@ -1,0 +1,33 @@
+name: Docs & Structure Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        run: |
+          echo "Checking critical files..."
+          test -f README.md
+          test -f AGENTS.md
+          test -f .env.example
+          test -f .gitignore
+          test -d docs
+          test -f docs/remote-chatgpt-control.md
+          test -f docs/connectors-status.md
+          test -f docs/git-hooks.md
+          test -d .githooks
+          echo "All required files present."
+
+      - name: List repository structure
+        run: |
+          echo "Repository structure:"
+          find . -type f -not -path './.git/*' | sort

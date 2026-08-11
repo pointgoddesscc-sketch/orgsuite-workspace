@@ -1,0 +1,7 @@
+#!/bin/sh
+# OrgSuite Workspace – post-merge hook
+
+echo ""
+echo "OrgSuite Workspace: merge completed successfully."
+echo "Remember to Pull this repository on Working Copy and any other devices."
+echo ""

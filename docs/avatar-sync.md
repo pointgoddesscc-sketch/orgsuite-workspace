@@ -4,7 +4,7 @@ Unified brand image tracking across websites and platforms.
 
 **Master identity:** Geometric AI head (wireframe / neural network style)  
 **Primary email:** `pointgoddesscc@gmail.com`  
-**Sync status:** ✅ Profiles synced (2026-08-11)
+**Sync status:** ✅ Re-verified live (2026-08-11)
 
 ---
 
@@ -12,9 +12,9 @@ Unified brand image tracking across websites and platforms.
 
 | Platform | Account / URL | Avatar / location | Sync status |
 |----------|---------------|-------------------|-------------|
-| **GitHub** | `pointgoddesscc-sketch` | https://avatars.githubusercontent.com/u/276164939?v=4 | ✅ Synced |
+| **GitHub** | `pointgoddesscc-sketch` | https://avatars.githubusercontent.com/u/276164939?v=4 | ✅ Live (PNG, verified) |
 | **GitLab** | `@pointgoddesscc` | Profile avatar | ✅ Synced |
-| **X** | `@PointGoddessCc` | https://pbs.twimg.com/profile_images/2079746924450643968/FHLlYM-K.jpg | ✅ Synced |
+| **X** | `@PointGoddessCc` | https://pbs.twimg.com/profile_images/2079746924450643968/FHLlYM-K.jpg | ✅ Live (JPEG, verified) |
 | **Gravatar** | `pointgoddesscc@gmail.com` | gravatar.com primary | ✅ Synced |
 | **Meta / Meta AI** | Business profiles | Page / profile picture | ✅ Synced |
 | **ChatGPT / Codex** | `pointgoddesscc@gmail.com` | Account profile | ✅ Aligned |
@@ -31,8 +31,18 @@ Unified brand image tracking across websites and platforms.
 | GitLab | `@pointgoddesscc` |
 | X | `@PointGoddessCc` |
 | X User ID | `2048576362781331456` |
-| Display name | Point Goddess CC / point Goddess cc |
+| Display name | Point Goddess CC / Captain Clark |
 | Brand mark | Geometric AI head |
+
+---
+
+## Last live checks
+
+| Source | Result | When |
+|--------|--------|------|
+| GitHub avatar HTTP | 200 · image/png | 2026-08-11 |
+| X avatar HTTP | 200 · image/jpeg | 2026-08-11 |
+| X user lookup | `@PointGoddessCc` · ID `2048576362781331456` | 2026-08-11 |
 
 ---
 
@@ -40,8 +50,8 @@ Unified brand image tracking across websites and platforms.
 
 1. Update master file offline
 2. Upload same file to: Gravatar → GitHub → GitLab → X → Meta → ChatGPT
-3. Update this matrix if any platform lags
-4. Pull `orgsuite-workspace` after doc changes
+3. Update this matrix
+4. Pull `orgsuite-workspace`
 
 ---
 
@@ -64,4 +74,4 @@ Unified brand image tracking across websites and platforms.
 - `docs/workplace-index.md`
 
 **Hub:** orgsuite-workspace  
-**Last sync recorded:** 2026-08-11
+**Last re-sync:** 2026-08-11

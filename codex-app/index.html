@@ -11,21 +11,22 @@
   <main class="shell">
     <header class="topbar">
       <div>
-        <div class="eyebrow">ORGSUITE · CODEX</div>
+        <div class="eyebrow">ORGSUITE · CODEX · GODADDY</div>
         <h1>Development Command Center</h1>
-        <p>Work with your GitHub/Codex workspace from one app surface.</p>
+        <p>Unified surface for GitHub, Codex, Linear, GoDaddy domains, and the full OrgSuite connector ecosystem.</p>
       </div>
       <div class="status"><span class="dot"></span> Connected workspace</div>
     </header>
 
     <section class="grid">
       <article class="card hero">
-        <div class="card-head"><span>Repository</span><span class="pill">main</span></div>
+        <div class="card-head"><span>Repository</span><span class="pill">feat/codex-in-app-command-center</span></div>
         <h2>pointgoddesscc-sketch/orgsuite-workspace</h2>
-        <p>Codex-ready source workspace with GitHub-backed development.</p>
+        <p>Codex-ready source workspace with GitHub-backed development and secure domain monitoring.</p>
         <div class="actions">
           <a href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace" target="_blank" rel="noreferrer">Open GitHub</a>
           <button data-action="codex">Open Codex</button>
+          <a href="https://linear.app/pse-management/project/orgsuite-codex-app-9146b449b7a1" target="_blank" rel="noreferrer">Linear Project</a>
         </div>
       </article>
 
@@ -34,6 +35,18 @@
         <div class="control" data-action="files"><b>Files</b><span>Inspect repository files →</span></div>
         <div class="control" data-action="branches"><b>Branches</b><span>Review development branches →</span></div>
         <div class="control" data-action="pulls"><b>Pull requests</b><span>Review and ship changes →</span></div>
+        <div class="control" data-action="linear"><b>Linear</b><span>PSE-16 &amp; project board →</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>GoDaddy Domain Health</span><span>🌐</span></div>
+        <ul class="systems">
+          <li><span>API Status</span><strong id="godaddy-status">Secure (keys on host)</strong></li>
+          <li><span>Environment</span><strong>OTE recommended</strong></li>
+          <li><span>DNS Writes</span><strong>Dry-run default</strong></li>
+          <li><span>Docs</span><strong><a href="../docs/godaddy-secure-integration.md" style="color:#8fe1ae">Integration guide</a></strong></li>
+        </ul>
+        <p class="note">Credentials never reach the browser. Health data is served by the authenticated proxy once configured.</p>
       </article>
 
       <article class="card">
@@ -41,15 +54,20 @@
         <ul class="systems">
           <li><span>GitHub</span><strong>Live</strong></li>
           <li><span>Codex</span><strong>Ready</strong></li>
-          <li><span>Linear</span><strong>Project created</strong></li>
-          <li><span>GitHub Actions</span><strong>Active</strong></li>
+          <li><span>Linear</span><strong>PSE-16 open</strong></li>
+          <li><span>Vercel</span><strong>Active</strong></li>
+          <li><span>Notion / Figma</span><strong>Active</strong></li>
+          <li><span>Stripe / Gmail / Outlook</span><strong>Active</strong></li>
+          <li><span>Calendar / Calendly / Teams</span><strong>Active</strong></li>
+          <li><span>GoDaddy</span><strong>API-ready</strong></li>
         </ul>
       </article>
 
       <article class="card wide">
         <div class="card-head"><span>Safe command bridge</span><span>🔐</span></div>
-        <p>This UI is the front door. Actual repository writes should run through authenticated server-side integration endpoints; never place GitHub tokens or API keys in browser code.</p>
+        <p>This UI is the front door. Actual repository writes, domain DNS mutations, and connector actions run through authenticated server-side integration endpoints. Never place GitHub tokens, GoDaddy keys, or API secrets in browser code.</p>
         <div class="terminal"><span>$</span> codex status <em>→ repository-backed session ready</em></div>
+        <div class="terminal"><span>$</span> godaddy health --dry-run <em>→ domain portfolio status (host only)</em></div>
       </article>
     </section>
   </main>

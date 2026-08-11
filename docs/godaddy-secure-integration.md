@@ -3,6 +3,14 @@
 ## Principle
 All GoDaddy domain and DNS operations use the official API only. Credentials never leave the host environment and are never exposed to browser code or committed to the repository.
 
+## Domain Proxy / WHOIS Privacy Contact
+
+**Domains by Proxy email:**  
+`30aa800b8c51400883f9307e174501f1@domainsbyproxy.com`
+
+This is the privacy-protected contact address used for domain-related correspondence (renewals, abuse notices, registrar messages, etc.).  
+It is **not** an API key, password, or login credential. Treat it as operational contact information only.
+
 ## Setup (one-time)
 
 1. Log into [GoDaddy Developer Center](https://developer.godaddy.com).
@@ -42,9 +50,11 @@ Any write operations (DNS updates, renewals) must:
 - [ ] Rate-limit respect and error handling present
 - [ ] Dry-run flag default for mutations
 - [ ] Audit log of domain/DNS changes
+- [x] Domain proxy contact recorded (WHOIS privacy only)
 
 ## Related
 
 - Linear: [PSE-16](https://linear.app/pse-management/issue/PSE-16/connect-godaddy-secure-automation-full-orgsuite-connectors-to-codex)
 - Skill: godaddy-secure-automation
-- Command Center: `codex-app/`
+- Command Center: `codex-app/` (live: https://orgsuite-codex-command-center.vercel.app)
+- Vercel project: orgsuite-codex-command-center

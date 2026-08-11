@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>OrgSuite Codex Command Center</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">ORGSUITE · CODEX</div>
+        <h1>Development Command Center</h1>
+        <p>Work with your GitHub/Codex workspace from one app surface.</p>
+      </div>
+      <div class="status"><span class="dot"></span> Connected workspace</div>
+    </header>
+
+    <section class="grid">
+      <article class="card hero">
+        <div class="card-head"><span>Repository</span><span class="pill">main</span></div>
+        <h2>pointgoddesscc-sketch/orgsuite-workspace</h2>
+        <p>Codex-ready source workspace with GitHub-backed development.</p>
+        <div class="actions">
+          <a href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace" target="_blank" rel="noreferrer">Open GitHub</a>
+          <button data-action="codex">Open Codex</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Workspace controls</span><span>⚡</span></div>
+        <div class="control" data-action="files"><b>Files</b><span>Inspect repository files →</span></div>
+        <div class="control" data-action="branches"><b>Branches</b><span>Review development branches →</span></div>
+        <div class="control" data-action="pulls"><b>Pull requests</b><span>Review and ship changes →</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Connected systems</span><span>◎</span></div>
+        <ul class="systems">
+          <li><span>GitHub</span><strong>Live</strong></li>
+          <li><span>Codex</span><strong>Ready</strong></li>
+          <li><span>Linear</span><strong>Project created</strong></li>
+          <li><span>GitHub Actions</span><strong>Active</strong></li>
+        </ul>
+      </article>
+
+      <article class="card wide">
+        <div class="card-head"><span>Safe command bridge</span><span>🔐</span></div>
+        <p>This UI is the front door. Actual repository writes should run through authenticated server-side integration endpoints; never place GitHub tokens or API keys in browser code.</p>
+        <div class="terminal"><span>$</span> codex status <em>→ repository-backed session ready</em></div>
+      </article>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -28,13 +28,32 @@ Use the right device for the job so the Ecosystem stays fast, reliable, and low-
 
 ## Practical Setup (real-life)
 
-### Apple side
-1. Working Copy already documented in `docs/working-copy-clone.md`
-2. Create a Shortcut named "OrgSuite Review":
-   - Get contents of latest PR or Linear issue
-   - Summarize with Apple Intelligence
-   - Speak or show the summary
-3. Optional Siri phrase: "Review OrgSuite"
+### Apple side – OrgSuite Diff Review Shortcut
+
+Create this Shortcut once on your iPhone or iPad (requires Apple Intelligence capable device for best results).
+
+**Name:** OrgSuite Diff Review
+
+**Steps to build in the Shortcuts app:**
+
+1. Open **Shortcuts** → tap **+** to create a new Shortcut.
+2. Add action: **Get Clipboard** (or **Receive** if you want Share Sheet support).
+3. Add action: **If** → If Clipboard has text → Continue, else Show Alert "No text on clipboard".
+4. Add action: **Summarize Text** (Apple Intelligence) or **Create Summary** / **Rewrite Text** depending on iOS version.
+   - Input: Clipboard contents
+   - Style: Concise or Bullet points (choose what works best for code diffs)
+5. Add action: **Show Result** (or **Speak Text** if you want audio review).
+6. Optional: Add **Copy to Clipboard** so the summary is ready to paste into Linear or a PR comment.
+7. Optional: Add **Open App** → Working Copy if you want to jump straight back to the repo.
+8. Tap the Shortcut name at the top → Rename to **OrgSuite Diff Review**.
+9. Tap the share icon → Add to Siri → record the phrase **"Review this diff"** or **"OrgSuite Diff"**.
+
+**How to use every day:**
+- Copy any git diff, PR description, or Linear comment on your Apple device.
+- Run the Shortcut (or say "Hey Siri, Review this diff").
+- Get an on-device Apple Intelligence summary instantly.
+
+This keeps heavy automation on Samsung and fast review passes on Apple, exactly as designed.
 
 ### Samsung Android side
 1. Install Working Copy + Termux + Tasker (or Automate)

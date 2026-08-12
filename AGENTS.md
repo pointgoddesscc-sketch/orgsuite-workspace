@@ -18,17 +18,18 @@ This file guides OpenAI Codex, Grok, and any compatible coding agent when workin
 4. Wait for human review and merge.
 5. After merge, the user will Pull in Working Copy.
 
-## Multi-Device Strategy (official)
+## Multi-Device Strategy (official – locked)
 
-See `docs/multi-device-strategy.md`.
+**Apple devices** → best for quick reviews, on-device Apple Intelligence summaries of diffs or skill docs, and light Siri-triggered status. Use them for review passes.
 
-- **Apple devices** are better for quick reviews, on-device Apple Intelligence summaries of diffs or skill docs, and light Siri-triggered status. Use Apple for review passes.
-- **Samsung Android phones** remain the stronger choice for longer-running clone, push, and background operations (Working Copy, Termux, Tasker-triggered checks). Higher background reliability for continuous monitoring. Keep the heavier automation and persistent sync on the Samsung Android side.
+**Samsung Android phones** → stronger for longer-running clone, push, and background operations (Working Copy + Termux + Tasker). Higher background reliability for continuous monitoring. Keep the heavier automation and persistent sync here.
+
+Full details and setup steps: `docs/multi-device-strategy.md`
 
 ## Project Context
 
 - Source of truth for the workspace hub: this repository
-- Primary devices: Working Copy on both Apple and Samsung Android surfaces
+- Primary devices: Working Copy on both Apple (review) and Samsung Android (automation)
 - Account: pointgoddesscc@gmail.com / pointgoddesscc-sketch
 - Linear team: PSE Management
 

@@ -4,74 +4,79 @@
 Account: pointgoddesscc@gmail.com / pointgoddesscc-sketch  
 Linked to Linear PSE-25 and Skills Inventory.
 
-## Core Principle
+## Core Principle (locked in)
 
-Use the right device for the job so the Ecosystem stays fast, reliable, and low-friction.
+**Apple devices** → best for quick reviews, on-device Apple Intelligence summaries of diffs or skill docs, and light Siri-triggered status. Use them for review passes.
 
-### Apple devices (iPhone / iPad / Mac)
-**Best for quick reviews, on-device intelligence, and light status.**
+**Samsung Android phones** → stronger for longer-running clone, push, and background operations (Working Copy + Termux + Tasker). Higher background reliability for continuous monitoring. Keep the heavier automation and persistent sync here.
 
+This is the permanent rule for the entire OrgSuite Ecosystem.
+
+---
+
+## Apple devices – Review Surface
+
+Use Apple for:
+- Quick reviews
 - On-device Apple Intelligence summaries of diffs, skill docs, PRs, and Linear issues
-- Light Siri-triggered status checks ("Hey Siri, pull OrgSuite status")
-- Quick review passes and short commits via Working Copy
-- Share Sheet → log conversation or create Linear note
-- Prefer Apple when you are reviewing, summarizing, or doing short interactive work
+- Light Siri-triggered status
+- Short interactive work and review passes
 
-### Samsung Android phones
-**Stronger choice for longer-running operations and background reliability.**
+### Ready-to-build Shortcut: OrgSuite Diff Review
 
+1. Open **Shortcuts** → **+**
+2. **Get Clipboard**
+3. **If** Clipboard has text (else alert “No text on clipboard”)
+4. **Summarize Text** / Apple Intelligence action → Concise or Bullet Points
+5. **Show Result** (or **Speak Text**)
+6. Optional: **Copy to Clipboard** + **Open App** → Working Copy
+7. Rename to **OrgSuite Diff Review**
+8. Add to Siri → “Review this diff” or “OrgSuite Diff”
+
+**Daily use:** Copy any diff → run Shortcut or say the Siri phrase → instant on-device summary.
+
+---
+
+## Samsung Android phones – Automation Surface
+
+Use Samsung for:
 - Longer-running clone, push, and sync jobs
-- Working Copy + Termux for continuous repo monitoring
-- Tasker profiles that trigger on network change, schedule, or notification
-- Higher background reliability than pure Apple Shortcuts for persistent sync
-- Prefer Samsung Android for automation that must keep running while the device is locked or in the background
+- Continuous repo monitoring
+- Background reliability while the device is locked
+- All persistent automation
 
-## Practical Setup (real-life)
+### Concrete starter setup
 
-### Apple side – OrgSuite Diff Review Shortcut
+1. Install **Working Copy**, **Termux**, and **Tasker** (or Automate).
+2. In Termux, create a simple status script:
 
-Create this Shortcut once on your iPhone or iPad (requires Apple Intelligence capable device for best results).
+```bash
+#!/data/data/com.termux/files/usr/bin/bash
+cd ~/storage/shared/git/orgsuite-workspace 2>/dev/null || cd ~/orgsuite-workspace
+echo "=== OrgSuite status $(date) ==="
+git fetch --quiet
+git status -sb
+```
 
-**Name:** OrgSuite Diff Review
+Save it as `~/orgsuite-status.sh` and make executable (`chmod +x`).
 
-**Steps to build in the Shortcuts app:**
+3. Tasker examples:
+   - **Profile**: Wi-Fi Connected → Task: Run Termux script + notify only if status changed
+   - **Profile**: Time every 4 hours → silent status check
+   - **Profile**: Notification from GitHub → Open Working Copy to the repo
 
-1. Open **Shortcuts** → tap **+** to create a new Shortcut.
-2. Add action: **Get Clipboard** (or **Receive** if you want Share Sheet support).
-3. Add action: **If** → If Clipboard has text → Continue, else Show Alert "No text on clipboard".
-4. Add action: **Summarize Text** (Apple Intelligence) or **Create Summary** / **Rewrite Text** depending on iOS version.
-   - Input: Clipboard contents
-   - Style: Concise or Bullet points (choose what works best for code diffs)
-5. Add action: **Show Result** (or **Speak Text** if you want audio review).
-6. Optional: Add **Copy to Clipboard** so the summary is ready to paste into Linear or a PR comment.
-7. Optional: Add **Open App** → Working Copy if you want to jump straight back to the repo.
-8. Tap the Shortcut name at the top → Rename to **OrgSuite Diff Review**.
-9. Tap the share icon → Add to Siri → record the phrase **"Review this diff"** or **"OrgSuite Diff"**.
+Keep the Samsung phone as the always-on automation surface. Apple stays for clean, fast review passes.
 
-**How to use every day:**
-- Copy any git diff, PR description, or Linear comment on your Apple device.
-- Run the Shortcut (or say "Hey Siri, Review this diff").
-- Get an on-device Apple Intelligence summary instantly.
+---
 
-This keeps heavy automation on Samsung and fast review passes on Apple, exactly as designed.
-
-### Samsung Android side
-1. Install Working Copy + Termux + Tasker (or Automate)
-2. Termux: keep a lightweight `git status` / `git pull --dry-run` script that can be called from Tasker
-3. Tasker profile examples:
-   - On Wi-Fi connected → run background status check
-   - Every 4 hours → silent pull status and notify only on change
-   - On notification from GitHub → open Working Copy to that repo
-4. Keep the Samsung device as the "always-on" automation surface for the workspace
-
-## Security
-- No credentials stored in Tasker, Shortcuts, or this repo
-- Authentication stays inside Working Copy / system keychain
-- All secrets remain in Vercel env or device Keychain only
+## Security (non-negotiable)
+- No credentials stored in Tasker, Shortcuts, Termux scripts, or this repository
+- Authentication lives only inside Working Copy / system keychain
+- Secrets stay in Vercel environment variables or device Keychain only
 
 ## Linked Workplace Items
-- Linear: PSE-25 (beta + multi-device)
-- Document: OrgSuite Skills & Modes Inventory
-- This file is the source-of-truth guidance for device choice
+- Linear: PSE-25
+- Skills & Modes Inventory document
+- This file is the single source of truth for device choice
 
-Update this document whenever real-world device behavior changes.
+Update whenever real-world behavior changes.

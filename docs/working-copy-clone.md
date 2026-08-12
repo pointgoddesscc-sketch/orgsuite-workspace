@@ -1,8 +1,8 @@
 # Working Copy – Clone & Use This Workspace
 
-## One-time clone
+## One-time clone (Apple or Samsung)
 
-1. Open **Working Copy** on iPhone.
+1. Open **Working Copy**.
 2. Tap **+** → **Clone repository**.
 3. Paste this exact URL:
 
@@ -20,6 +20,13 @@ You now have the clean professional OrgSuite Workspace.
 - Before editing: **Pull**
 - After editing: Commit → Push (prefer a branch + Pull Request)
 - After any merge on GitHub: **Pull** again
+
+## Device-specific guidance (official)
+
+See **[docs/multi-device-strategy.md](multi-device-strategy.md)** for the full strategy.
+
+- **Apple devices**: Best for quick reviews, on-device Apple Intelligence summaries of diffs or skill docs, and light Siri-triggered status. Use Apple for review passes.
+- **Samsung Android phones**: Stronger for longer-running clone, push, and background operations (Working Copy + Termux + Tasker). Higher background reliability for continuous monitoring. Keep the heavier automation and persistent sync on the Samsung Android side.
 
 ## Related main projects
 

@@ -1,6 +1,6 @@
 # OrgSuite Workspace
 
-## Current Status (2026-08-11)
+## Current Status (2026-08-15)
 
 - Working Copy clone: complete
 - GitHub plugin: authorized with admin access
@@ -8,7 +8,9 @@
 - ChatGPT Codex: connected and following AGENTS.md + docs/ rules
 - GitHub Actions: active
 - Brand avatar: synced across GitHub, GitLab, X, Gravatar, Meta
-- All connectors: live under [pointgoddesscc@gmail.com](mailto:pointgoddesscc@gmail.com)
+- All primary connectors: live under [pointgoddesscc@gmail.com](mailto:pointgoddesscc@gmail.com)
+- **simmple-login** (OrgSuite Agent) fully documented in this hub
+- **Proton Mail + SimpleLogin** secure mail aliases documented (manual / no live connector)
 
 **Primary professional hub for Point Goddess CC / PSE Management**
 
@@ -74,13 +76,29 @@ Full guide: `docs/remote-chatgpt-control.md`
 
 | Repo | Role |
 |------|------|
-| **orgsuite-workspace** | Documentation hub + workflow |
-| **simmple-login** | OrgSuite Agent (Cloudflare Workers AI) |
+| **orgsuite-workspace** | Documentation hub + workflow (this repo) |
+| **simmple-login** | OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
 | **slack-bot** | Slack automation |
 | **stripe-dashboard** | Stripe dashboard |
 | **marketing-page** | Vercel marketing site |
+| **adsgpt-psemanagement** | AdsGPT landing + Proton / SimpleLogin links |
 
 Secondary clones (e.g. `llm-chat-app-mail` on GitLab) are optional after you commit any pending work there.
+
+---
+
+## Secure Mail (Proton + SimpleLogin)
+
+Documented addresses and aliases live in:
+
+**`docs/secure-mail-proton-simplelogin.md`**
+
+Known verified entries:
+- Proton: `pacerssportsent@pm.me`, `psebank@pm.me`
+- SimpleLogin alias domain: `8shield.net`
+- Project alias: `igpt.flannels193@8shield.net`
+
+**Proton Pass** itself has no live OrgSuite connector — aliases cannot be auto-pulled. See the secure-mail doc for the current limitation and recommended next steps.
 
 ---
 
@@ -89,7 +107,9 @@ Secondary clones (e.g. `llm-chat-app-mail` on GitLab) are optional after you com
 | Path | Purpose |
 |------|---------|
 | `docs/remote-chatgpt-control.md` | Remote + Working Copy + GitHub |
-| `docs/connectors-status.md` | Connectors status |
+| `docs/connectors-status.md` | Connectors status (including Agent + Proton) |
+| `docs/orgsuite-agent-simmple-login.md` | Full OrgSuite Agent documentation |
+| `docs/secure-mail-proton-simplelogin.md` | Proton Mail + SimpleLogin aliases |
 | `docs/avatar-sync.md` | Avatar tracking matrix |
 | `docs/brand-identity.md` | Brand identity |
 | `docs/x-api-tracking.md` | X API tracking |
@@ -108,10 +128,13 @@ Secondary clones (e.g. `llm-chat-app-mail` on GitLab) are optional after you com
 
 ---
 
-## Connectors (all active)
+## Connectors (summary)
 
 Google Calendar · Calendly · Linear · Outlook · Microsoft Teams · Figma · Notion · Vercel · Gmail · GitHub · Stripe  
-All wired to `pointgoddesscc@gmail.com`.
++ **simmple-login** (OrgSuite Agent)  
++ Proton Mail / SimpleLogin (documented, manual)  
+
+All primary connectors wired to `pointgoddesscc@gmail.com`.
 
 ---
 

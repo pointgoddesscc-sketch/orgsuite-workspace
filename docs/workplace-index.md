@@ -12,11 +12,22 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 | Repository | Purpose |
 |------------|---------|
 | **orgsuite-workspace** | Main professional hub for Working Copy + ChatGPT Codex |
+| **simmple-login** | Official OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
+
+## Secure Mail
+
+| Service | Status | Doc |
+|---------|--------|-----|
+| Proton Mail + SimpleLogin | Documented (manual) | `docs/secure-mail-proton-simplelogin.md` |
+| Proton Pass | Not connected (no live connector) | Same doc |
+
+Known aliases: `pacerssportsent@pm.me`, `psebank@pm.me`, `igpt.flannels193@8shield.net` (domain 8shield.net).
 
 ## Priority Repositories (recommend authorizing in Codex GitHub plugin)
 
 | Repository | Purpose |
 |------------|---------|
+| simmple-login | OrgSuite Agent |
 | codex | Main Codex marketing & website foundation |
 | orgsuite-open-source-licenses | Enterprise license attribution |
 | orgsuite-ai-os | Multi-agent Organisation Intelligence Platform |
@@ -30,6 +41,7 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 | orgsuite-scoopz-command-center | Unified AI command center |
 | filelogger-workplace | FileLogger control center |
 | pointgoddess-ai-platform | AI business & marketing platform |
+| adsgpt-psemanagement | AdsGPT landing + Proton/SimpleLogin links |
 
 ## Additional Active Repositories
 

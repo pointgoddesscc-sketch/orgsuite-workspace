@@ -13,6 +13,7 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 |------------|---------|
 | **orgsuite-workspace** | Main professional hub for Working Copy + ChatGPT Codex |
 | **simmple-login** | Official OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
+| **orgsuite-marketing-connectors** (private) | Official Spotify Ads/Analytics + Meta Marketing API setup – env vars only, least privilege, audit logging |
 
 ## Secure Mail
 
@@ -28,6 +29,7 @@ Known aliases: `pacerssportsent@pm.me`, `psebank@pm.me`, `igpt.flannels193@8shie
 | Repository | Purpose |
 |------------|---------|
 | simmple-login | OrgSuite Agent |
+| orgsuite-marketing-connectors | Official marketing connectors (Spotify + Meta) |
 | codex | Main Codex marketing & website foundation |
 | orgsuite-open-source-licenses | Enterprise license attribution |
 | orgsuite-ai-os | Multi-agent Organisation Intelligence Platform |

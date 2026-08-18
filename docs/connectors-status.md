@@ -17,7 +17,8 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | Stripe             | Active              | Payments (test mode available)                   |
 | **simmple-login**  | Available           | OrgSuite Agent (Cloudflare Workers AI)           |
 | **Proton Mail**    | Documented / Manual | Secure inbox (see secure-mail doc)               |
-| **SimpleLogin**    | Documented / Manual | Email aliases on 8shield.net                     |
+| **SimpleLogin (API clients)** | Documented / Working | Email aliases via existing Chrome/Safari clients |
+| **SimpleLogin Full App** | Source complete · Self-host ready | Full dashboard, subdomain, API under our control |
 | **Proton Pass**    | Not connected       | Password manager – no live OrgSuite connector    |
 | **Marketing Connectors** | Ready to Configure | Spotify Ads/Analytics + Meta Marketing API (official) |
 
@@ -25,10 +26,14 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 
 - **simmple-login** is the official OrgSuite Agent. Full details: `docs/orgsuite-agent-simmple-login.md`
 - **Proton / SimpleLogin** addresses and aliases currently known are documented in `docs/secure-mail-proton-simplelogin.md`.
-- There is **no live API connector** for Proton Mail, SimpleLogin, or Proton Pass. Aliases cannot be auto-synced. Any additional aliases must be added manually by the owner.
+- **SimpleLogin Full App** (complete self-host control layer) is permanently tracked in:
+  **`docs/simplelogin-selfhost-control.md`**  
+  Fork: https://github.com/pointgoddesscc-sketch/app  
+  This gives full ownership of dashboard, subdomain feature, and API. Local-dev and production self-host paths are documented there.
+- There is **no live API connector** for Proton Mail or Proton Pass. Aliases cannot be auto-synced from the hosted service. Any additional aliases must be added manually by the owner or via the self-hosted instance.
 - **Marketing Connectors** (Spotify Ads/Analytics + Meta Marketing API) are fully documented in the private repo:
   https://github.com/pointgoddesscc-sketch/orgsuite-marketing-connectors  
   Environment variables only · Least privilege · Audit logging required · No secrets in code.
 - These connectors remain synchronized with the account used for Working Copy and ChatGPT.
 
-**Last updated:** 2026-08-15
+**Last updated:** 2026-08-18

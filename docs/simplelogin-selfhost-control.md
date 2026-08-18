@@ -1,11 +1,24 @@
 # SimpleLogin Full-App Self-Host – OrgSuite Control Layer
 
-**Status:** Source complete · Local/self-host ready · Linear issue pending re-auth  
+**Status:** Source complete · Local/self-host ready · Live control page on Vercel  
 **Date:** 2026-08-18  
 **Owner:** Point Goddess CC (`pointgoddesscc@gmail.com`)  
 **GitHub account:** `pointgoddesscc-sketch`
 
 This document is the permanent workplace source of truth for full control of SimpleLogin under OrgSuite.
+
+---
+
+## Live Control Page (Vercel)
+
+**Production URL:** https://orgsuite-simplelogin-control-pse-sent.vercel.app
+
+Professional status surface that shows:
+- Full application source status
+- Permanent documentation links
+- Workplace Avatar readiness
+- Ecosystem goals (Connectivity · Communication · Control)
+- Exact local-dev commands
 
 ---
 
@@ -19,6 +32,7 @@ This document is the permanent workplace source of truth for full control of Sim
 | Subdomain feature | `app/dashboard/views/subdomain.py` + template | Present |
 | Official API docs | `docs/api.md` inside the fork | Present |
 | Existing OrgSuite API clients | `chrome`, `orgsuite-safari`, `orgsuite-proton-mail-integration` | Working |
+| Live control page | https://orgsuite-simplelogin-control-pse-sent.vercel.app | **Live** |
 
 The live authenticated pages at `https://app.simplelogin.io/dashboard/` and `/dashboard/subdomain` cannot be cloned as static sites. The correct permanent artifact is the full open-source application, which is now under our control.
 
@@ -29,7 +43,7 @@ The live authenticated pages at `https://app.simplelogin.io/dashboard/` and `/da
 | Goal | How this advances it | Current state |
 |------|----------------------|---------------|
 | **Connectivity** | Full backend + API under our GitHub; can point existing clients to a self-hosted instance | Source complete |
-| **Communication** | Linear issue + this permanent doc keep the workplace aligned | Linear requires re-auth |
+| **Communication** | Linear issue + this permanent doc + live Vercel page keep the workplace aligned | Linear requires re-auth |
 | **Control** | Complete ownership of dashboard, subdomain, alias creation, quotas, custom domains | Ready once instance is running |
 
 ---
@@ -100,7 +114,7 @@ Linear connector currently requires re-authentication.
 **Ready issue title:**  
 Self-host SimpleLogin under OrgSuite – full control of dashboard, subdomain & API
 
-**Body:** Link this document + the fork + success criteria (local instance running, API clients pointed at it, subdomain working, secrets only in env).
+**Body:** Link this document + the fork + the live Vercel page + success criteria (local instance running, API clients pointed at it, subdomain working, secrets only in env).
 
 Once Linear is re-authenticated, create the issue under **OrgSuite Codex App**, link this file, and update `docs/connectors-status.md`.
 

@@ -15,6 +15,7 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | Gmail              | Active              | Primary email (pointgoddesscc@gmail.com)         |
 | GitHub             | Active              | Source of truth for all code                     |
 | Stripe             | Active              | Payments (test mode available)                   |
+| **GoDaddy**        | API-ready           | Domain & DNS (secure automation skill). Keys on host/Vercel only. |
 | **Make.com + OpenAI** | Ready to Configure | Scenario automation + OpenAI modules (us2.make.com). Connection lives in Make encrypted store; not yet user-confirmed live. |
 | **simmple-login**  | Available           | OrgSuite Agent (Cloudflare Workers AI)           |
 | **Proton Mail**    | Documented / Manual | Secure inbox (see secure-mail doc)               |
@@ -22,6 +23,18 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | **SimpleLogin Full App** | Source complete · Self-host ready | Full dashboard, subdomain, API under our control |
 | **Proton Pass**    | Not connected       | Password manager – no live OrgSuite connector    |
 | **Marketing Connectors** | Ready to Configure | Spotify Ads/Analytics + Meta Marketing API (official) |
+
+### Domain Proxy Contact (WHOIS privacy) — 2026-08-20
+
+Public Domains by Proxy (GoDaddy) WHOIS privacy details recorded from owner WHOIS view:
+
+- **Organization:** Domains By Proxy, LLC
+- **Name:** Registration Private
+- **Address:** DomainsByProxy.com, 100 S. Mill Ave, Suite 1600, Tempe, Arizona, United States 85281
+- **Telephone:** +1.4806242599
+- **Email:** `2dee023ea92f4d5ea44412520ce6ec9a@domainsbyproxy.com`
+
+Privacy-protected contact only — **not** an API credential or login. Used for domain correspondence (renewals, abuse notices, transfers). API keys stay in host / Vercel environment variables only. See Linear document [OrgSuite Connector Rollout Checklist & Status](https://linear.app/pse-management/document/orgsuite-connector-rollout-checklist-and-status-2f33b168b2b9) and issue PSE-16.
 
 ### Notes
 

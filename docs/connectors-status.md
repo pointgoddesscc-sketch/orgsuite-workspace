@@ -15,6 +15,7 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | Gmail              | Active              | Primary email (pointgoddesscc@gmail.com)         |
 | GitHub             | Active              | Source of truth for all code                     |
 | Stripe             | Active              | Payments (test mode available)                   |
+| **Make.com + OpenAI** | Ready to Configure | Scenario automation + OpenAI modules (us2.make.com). Connection lives in Make encrypted store; not yet user-confirmed live. |
 | **simmple-login**  | Available           | OrgSuite Agent (Cloudflare Workers AI)           |
 | **Proton Mail**    | Documented / Manual | Secure inbox (see secure-mail doc)               |
 | **SimpleLogin (API clients)** | Documented / Working | Email aliases via existing Chrome/Safari clients |
@@ -34,6 +35,7 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 - **Marketing Connectors** (Spotify Ads/Analytics + Meta Marketing API) are fully documented in the private repo:
   https://github.com/pointgoddesscc-sketch/orgsuite-marketing-connectors  
   Environment variables only · Least privilege · Audit logging required · No secrets in code.
+- **Make.com + OpenAI**: The OpenAI connection must be created inside Make.com (Connections → Create connection → paste API key from the secure phone folder). Status will move to “Connected – user confirmed” only after explicit confirmation. Secrets never leave Make’s encrypted store or the local device.
 - These connectors remain synchronized with the account used for Working Copy and ChatGPT.
 
-**Last updated:** 2026-08-18
+**Last updated:** 2026-08-20

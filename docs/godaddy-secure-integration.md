@@ -1,9 +1,33 @@
 # GoDaddy Secure Integration – OrgSuite
 
-**Status:** Ready to Configure (API keys required on host / Vercel)
+**Status:** Deployed & Ready for API keys only
 
 **Primary domain:** `psemanagement.services`  
-**Last recorded from owner WHOIS:** 2026-08-20
+**Last recorded from owner WHOIS:** 2026-08-20  
+**Auto-renews:** Jul 13, 2027
+
+---
+
+## Live Project (2026-08-20)
+
+| Item | Value |
+|------|-------|
+| **Vercel Project** | `orgsuite-godaddy-health` |
+| **Production URL** | https://orgsuite-godaddy-health.vercel.app |
+| **Health Endpoint** | https://orgsuite-godaddy-health.vercel.app/api/godaddy/health |
+| **Domain hard-coded** | `psemanagement.services` |
+
+### One remaining step (owner only)
+
+1. Vercel → Project `orgsuite-godaddy-health` → **Settings → Environment Variables**
+2. Add for Production + Preview:
+   - `GODADDY_API_KEY`
+   - `GODADDY_API_SECRET`
+3. Redeploy (or wait for next automatic deploy)
+
+Generate keys at: https://developer.godaddy.com
+
+Until the keys are present the endpoint returns HTTP 503 with a clear message. No secrets exist in the codebase.
 
 ---
 
@@ -40,70 +64,38 @@ Privacy contact only — **not** a credential.
 
 Never call the GoDaddy API from the browser. Always proxy through a server route that holds the credentials.
 
-### Required Environment Variables (host / Vercel only)
+### Required Environment Variables (Vercel only)
 
 ```
-GODADDY_API_KEY=          # from developer.godaddy.com
-GODADDY_API_SECRET=       # never commit
-GODADDY_DOMAIN=psemanagement.services
+GODADDY_API_KEY=
+GODADDY_API_SECRET=
 ```
 
-### Recommended API Route (example pattern)
+Domain is hard-coded inside the route to `psemanagement.services`.
 
+### Response shape (when keys are present)
+
+```json
+{
+  "ok": true,
+  "domain": "psemanagement.services",
+  "status": "ACTIVE",
+  "expires": "2027-07-13T...",
+  "locked": true,
+  "renewAuto": true,
+  "nameServers": ["ns07.domaincontrol.com", "ns08.domaincontrol.com"],
+  "checkedAt": "<ISO timestamp>"
+}
 ```
-GET /api/godaddy/health
-Authorization: none (server-side only)
-```
-
-Implementation outline (Next.js / Express / Cloudflare Worker):
-
-1. Read `GODADDY_API_KEY` + `GODADDY_API_SECRET` from process.env
-2. If missing → return 503 with clear message (no secrets leaked)
-3. Call official endpoint:
-   `GET https://api.godaddy.com/v1/domains/psemanagement.services`
-   Header: `Authorization: sso-key ${KEY}:${SECRET}`
-4. Return sanitized JSON only:
-   ```json
-   {
-     "domain": "psemanagement.services",
-     "status": "ACTIVE",
-     "expires": "2027-07-13T23:58:05.351Z",
-     "locked": true,
-     "transferLockUntil": "2026-09-11",
-     "nameservers": ["ns07.domaincontrol.com", "ns08.domaincontrol.com"],
-     "dnssec": "signed",
-     "checkedAt": "<ISO timestamp>"
-   }
-   ```
-5. Rate-limit and cache (e.g. 5–15 min) to respect GoDaddy limits
-
-### UI Card
-
-Command Center Domain Health card should fetch the proxy endpoint and display:
-- Expiration countdown
-- Lock status
-- DNSSEC status
-- Last successful check
-
----
-
-## Renewal & Automation Notes
-
-- Expiration: **2027-07-13**
-- Recommended reminders: 90 / 30 / 7 days prior
-- Domain Lock is currently **On** (good)
-- External registrar transfer becomes available after **2026-09-11**
-- Any DNS changes should use the official GoDaddy API with dry-run first (see godaddy-secure-automation skill)
 
 ---
 
 ## Security Rules (non-negotiable)
 
 - API key + secret never appear in repository, frontend, Linear, or chat
-- Use Vercel Environment Variables or host secret manager
-- Least privilege: only the scopes needed for domain info + optional DNS read
+- Use Vercel Environment Variables only
+- Least privilege: only the scopes needed for domain info
 - All mutation scripts must default to dry-run
-- Log access but never log the secret itself
 
 ---
 
@@ -111,6 +103,5 @@ Command Center Domain Health card should fetch the proxy endpoint and display:
 
 - Linear: PSE-16 + Connector Checklist document
 - Skill: godaddy-secure-automation
-- Live Command Center: see current Vercel deployment linked in Linear
 
 **Last updated:** 2026-08-20 by Grok / OrgSuite Engineering Partner

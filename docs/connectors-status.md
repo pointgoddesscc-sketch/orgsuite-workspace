@@ -17,6 +17,7 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | Stripe             | Active              | Payments (test mode available)                   |
 | **GoDaddy**        | API-ready           | Domain & DNS for **psemanagement.services**. Keys on host/Vercel only. See `docs/godaddy-secure-integration.md` |
 | **Make.com + OpenAI** | Ready to Configure | Scenario automation + OpenAI modules (us2.make.com). Connection lives in Make encrypted store; not yet user-confirmed live. |
+| **Claude AI (Anthropic)** | Proposed / Ready to Configure | Multi-AI delivery + Messages API client. See `connectors/claude/` and [PSE-31](https://linear.app/pse-management/issue/PSE-31/connect-claude-ai-anthropic-as-orgsuite-multi-ai-connector). Key required in env only. |
 | **simmple-login**  | Available           | OrgSuite Agent (Cloudflare Workers AI)           |
 | **Proton Mail**    | Documented / Manual | Secure inbox (see secure-mail doc)               |
 | **SimpleLogin (API clients)** | Documented / Working | Email aliases via existing Chrome/Safari clients |
@@ -50,6 +51,7 @@ Key facts:
   https://github.com/pointgoddesscc-sketch/orgsuite-marketing-connectors  
   Environment variables only · Least privilege · Audit logging required · No secrets in code.
 - **Make.com + OpenAI**: The OpenAI connection must be created inside Make.com (Connections → Create connection → paste API key from the secure phone folder). Status will move to “Connected – user confirmed” only after explicit confirmation. Secrets never leave Make’s encrypted store or the local device.
+- **Claude AI (Anthropic)**: Skeleton and multi-AI delivery design live under `connectors/claude/`. Status remains Proposed / Ready to Configure until `ANTHROPIC_API_KEY` is confirmed in secrets and a first verified call succeeds (PSE-31).
 - These connectors remain synchronized with the account used for Working Copy and ChatGPT.
 
-**Last updated:** 2026-08-20
+**Last updated:** 2026-08-21

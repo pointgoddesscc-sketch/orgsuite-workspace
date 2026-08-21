@@ -1,21 +1,23 @@
-# Brand Identity – Point Goddess CC
+# Brand Identity – Point Goddess CC / OrgSuite
 
-## Official profile image
+## Official profile image (updated 2026-08-21)
 
-Geometric AI head (wireframe neural network style) — **synced across platforms** (2026-08-11).
+**Neural Digital Avatar** – high-fidelity humanoid head with luminous network mesh (blue/purple glowing nodes).  
+Circular variant preferred for all profile pictures and avatars.
 
 | Platform | Account | Status |
 |----------|---------|--------|
-| **GitHub** | `pointgoddesscc-sketch` | ✅ Synced |
-| **GitLab** | `@pointgoddesscc` | ✅ Synced |
-| **Gravatar** | `pointgoddesscc@gmail.com` | ✅ Synced |
-| **Meta / Meta AI** | Business profiles | ✅ Synced |
-| **X** | `@PointGoddessCc` | ✅ Synced |
-| **ChatGPT / Codex** | `pointgoddesscc@gmail.com` | ✅ Aligned |
+| **GitHub** | `pointgoddesscc-sketch` | 🔄 Pending owner upload |
+| **GitLab** | `@pointgoddesscc` | 🔄 Pending |
+| **Gravatar** | `pointgoddesscc@gmail.com` | 🔄 Pending |
+| **Meta / Meta AI** | Business profiles | 🔄 Pending |
+| **X** | `@PointGoddessCc` | 🔄 Pending |
+| **ChatGPT / Codex** | `pointgoddesscc@gmail.com` | 🔄 Pending |
+| **Canva OrgSuite** | Brand kit | Ready to Configure (upload circular) |
+| **Command Center** | Live Vercel app | Requires Authorization |
 
-**GitHub avatar:** https://avatars.githubusercontent.com/u/276164939?v=4  
-**X profile:** https://x.com/PointGoddessCc  
-**X User ID:** `2048576362781331456`
+**Tracking:** [PSE-32](https://linear.app/pse-management/issue/PSE-32/connect-neural-digital-avatar-across-orgsuite-workplace)  
+**Source assets:** Grok Orgsuite skill (`orgsuite-neural-avatar.jpg` + circular variant)
 
 Full matrix: **`docs/avatar-sync.md`**
 
@@ -31,8 +33,8 @@ Full matrix: **`docs/avatar-sync.md`**
 | X | `@PointGoddessCc` |
 | X User ID | `2048576362781331456` |
 | Display name | Point Goddess CC |
-| Avatar | Geometric AI head (synced) |
-| X App ID | *pending – create at developer.x.com* |
+| Avatar | Neural Digital Avatar (luminous mesh) |
+| Linear issue | PSE-32 |
 
 ---
 

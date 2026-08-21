@@ -1,6 +1,6 @@
 # OrgSuite Workspace
 
-## Current Status (2026-08-15)
+## Current Status (2026-08-21)
 
 - Working Copy clone: complete
 - GitHub plugin: authorized with admin access
@@ -62,13 +62,16 @@ Without identity, commits may fail or show “Identity not configured”.
 
 ---
 
-## Quick Start – Remote ChatGPT Control
+## Quick Start – Remote ChatGPT Codex
 
-1. Desktop ChatGPT (pointgoddesscc@gmail.com) → Codex → Connect GitHub plugin → authorize this repo
-2. iPhone ChatGPT → Codex → **Remote** → pair with desktop
-3. Work via Remote; changes flow through GitHub → Working Copy (Pull)
+1. Desktop ChatGPT (pointgoddesscc@gmail.com) → Codex → Connect GitHub plugin → authorize this repository (`pointgoddesscc-sketch/orgsuite-workspace`).
+2. iPhone ChatGPT → Codex → **Remote** → pair with desktop.
+3. Work via Remote; changes flow through GitHub → Working Copy (Pull).
+4. Codex follows the rules in `AGENTS.md` (source of truth for agent behavior).
 
 Full guide: `docs/remote-chatgpt-control.md`
+
+**Important:** Codex must never claim remote control of Edge, local tabs, cookies, or sessions. All work stays on official authenticated paths only.
 
 ---
 
@@ -117,7 +120,7 @@ Known verified entries:
 | `.githooks/` | pre-commit + post-merge |
 | `.github/workflows/` | docs-check + secret-scan |
 | `.env.example` | Safe environment template |
-| `AGENTS.md` | Instructions for AI agents |
+| `AGENTS.md` | Instructions for AI agents (Codex + Grok) |
 
 ---
 

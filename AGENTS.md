@@ -10,6 +10,25 @@ This file guides OpenAI Codex, Grok, and any compatible coding agent when workin
 - After any change, ensure the README and docs remain accurate.
 - Treat this repository as the primary hub for Working Copy and ChatGPT Remote workflows.
 
+## Codex Connection (OpenAI Codex / ChatGPT Codex)
+
+This repository is the designated primary workspace for OpenAI Codex.
+
+**How Codex should treat this repo:**
+- Source of truth for OrgSuite workplace documentation and workflows.
+- Follow all rules in this AGENTS.md and the `docs/` folder.
+- Never invent live connectors, credentials, or remote browser control.
+- Prefer creating feature branches and opening pull requests.
+- After any significant change, update README.md or relevant docs so they stay accurate.
+
+**Official connection path (user side):**
+1. In ChatGPT (pointgoddesscc@gmail.com) → Codex → Connect GitHub plugin.
+2. Authorize this repository (`pointgoddesscc-sketch/orgsuite-workspace`).
+3. On iPhone, use Codex Remote paired with the desktop session.
+4. All changes flow through GitHub → Working Copy (Pull).
+
+Codex must never claim it has remote control of Edge, local tabs, cookies, or sessions. All Microsoft and GitHub work stays on official authenticated paths only.
+
 ## Preferred Workflow
 
 1. Create a feature branch.

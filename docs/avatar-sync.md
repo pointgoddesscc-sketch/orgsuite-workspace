@@ -1,10 +1,23 @@
-# Avatar Sync & Tracking – Point Goddess CC
+# Avatar Sync & Tracking – Point Goddess CC / OrgSuite
 
 Unified brand image tracking across websites and platforms.
 
-**Master identity:** Geometric AI head (wireframe / neural network style)  
+**Master identity (updated 2026-08-21):** Neural Digital Avatar – high-fidelity humanoid head with luminous network mesh (blue/purple nodes)  
+**Circular profile variant:** Preferred for avatars and profile pictures  
 **Primary email:** `pointgoddesscc@gmail.com`  
-**Sync status:** ✅ Re-verified live (2026-08-11)
+**Sync status:** 🔄 In progress – documentation + Linear tracking live; platform uploads pending owner action  
+**Tracking issue:** [PSE-32](https://linear.app/pse-management/issue/PSE-32/connect-neural-digital-avatar-across-orgsuite-workplace)
+
+---
+
+## Source Assets (Grok / OrgSuite skill)
+
+| File | Description | Location |
+|------|-------------|----------|
+| `orgsuite-neural-avatar.jpg` | Full 1500×1500 master | Grok skill assets + artifacts |
+| `orgsuite-neural-avatar-circular.jpg` | Circular profile-ready | Grok skill assets + artifacts |
+
+These files are the single source of truth for the new identity. Binary images are held in the Grok Orgsuite skill until public hosting is configured.
 
 ---
 
@@ -12,13 +25,15 @@ Unified brand image tracking across websites and platforms.
 
 | Platform | Account / URL | Avatar / location | Sync status |
 |----------|---------------|-------------------|-------------|
-| **GitHub** | `pointgoddesscc-sketch` | https://avatars.githubusercontent.com/u/276164939?v=4 | ✅ Live (PNG, verified) |
-| **GitLab** | `@pointgoddesscc` | Profile avatar | ✅ Synced |
-| **X** | `@PointGoddessCc` | https://pbs.twimg.com/profile_images/2079746924450643968/FHLlYM-K.jpg | ✅ Live (JPEG, verified) |
-| **Gravatar** | `pointgoddesscc@gmail.com` | gravatar.com primary | ✅ Synced |
-| **Meta / Meta AI** | Business profiles | Page / profile picture | ✅ Synced |
-| **ChatGPT / Codex** | `pointgoddesscc@gmail.com` | Account profile | ✅ Aligned |
-| **Working Copy** | Local clones | Host avatars | ✅ Follows remotes |
+| **GitHub** | `pointgoddesscc-sketch` | https://avatars.githubusercontent.com/u/276164939?v=4 | 🔄 Pending owner upload of circular variant |
+| **GitLab** | `@pointgoddesscc` | Profile avatar | 🔄 Pending |
+| **X** | `@PointGoddessCc` | Current profile image | 🔄 Pending |
+| **Gravatar** | `pointgoddesscc@gmail.com` | gravatar.com primary | 🔄 Pending |
+| **Meta / Meta AI** | Business profiles | Page / profile picture | 🔄 Pending |
+| **ChatGPT / Codex** | `pointgoddesscc@gmail.com` | Account profile | 🔄 Pending |
+| **Canva OrgSuite brand** | Brand kit assets | Upload circular + full | 🔄 Ready to Configure |
+| **Command Center** | orgsuite-codex-command-center.vercel.app | AI identity image | 🔄 Requires Authorization |
+| **Working Copy** | Local clones | Host avatars | Follows remotes |
 
 ---
 
@@ -32,25 +47,16 @@ Unified brand image tracking across websites and platforms.
 | X | `@PointGoddessCc` |
 | X User ID | `2048576362781331456` |
 | Display name | Point Goddess CC / Captain Clark |
-| Brand mark | Geometric AI head |
-
----
-
-## Last live checks
-
-| Source | Result | When |
-|--------|--------|------|
-| GitHub avatar HTTP | 200 · image/png | 2026-08-11 |
-| X avatar HTTP | 200 · image/jpeg | 2026-08-11 |
-| X user lookup | `@PointGoddessCc` · ID `2048576362781331456` | 2026-08-11 |
+| Brand mark | Neural Digital Avatar (luminous mesh humanoid) |
+| Linear tracking | PSE-32 |
 
 ---
 
 ## When the image changes again
 
-1. Update master file offline
-2. Upload same file to: Gravatar → GitHub → GitLab → X → Meta → ChatGPT
-3. Update this matrix
+1. Update master file offline (or via Grok assets)
+2. Upload same file to: Gravatar → GitHub → GitLab → X → Meta → ChatGPT → Canva brand kit
+3. Update this matrix + Linear PSE-32
 4. Pull `orgsuite-workspace`
 
 ---
@@ -64,6 +70,7 @@ Unified brand image tracking across websites and platforms.
 | GitLab | https://gitlab.com/pointgoddesscc |
 | X | https://x.com/PointGoddessCc |
 | Gravatar | https://gravatar.com |
+| Linear issue | https://linear.app/pse-management/issue/PSE-32 |
 
 ---
 
@@ -74,4 +81,4 @@ Unified brand image tracking across websites and platforms.
 - `docs/workplace-index.md`
 
 **Hub:** orgsuite-workspace  
-**Last re-sync:** 2026-08-11
+**Last re-sync:** 2026-08-21 (Neural Digital Avatar registered via Grok Engineering Partner)

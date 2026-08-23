@@ -54,6 +54,7 @@ Key facts:
   Environment variables only · Least privilege · Audit logging required · No secrets in code.
 - **Make.com + OpenAI**: The OpenAI connection must be created inside Make.com (Connections → Create connection → paste API key from the secure phone folder). Status will move to “Connected – user confirmed” only after explicit confirmation. Secrets never leave Make’s encrypted store or the local device.
 - **X API**, **Bot ↔ Agent Bridge**, and **Siri / Shortcuts** packages prepared 2026-08-23. Live tokens, webhooks, and on-device Shortcut installation remain owner-only (**Requires Authorization**). No secrets stored in Git or sandbox.
+- **X posting hard-stops (2026-08-23):** Never paste keys into chat; `wrangler` login/deploy must run on owner terminal only; unattended AI → post is blocked pending human approval gate; Cloudflare workers `super-field-8d27` / `worker-odd-flower-c7e7` identity still unresolved. Tracked as **PSE-45**.
 - These connectors remain synchronized with the account used for Working Copy and ChatGPT.
 
 **Last updated:** 2026-08-23

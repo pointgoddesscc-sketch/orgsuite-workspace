@@ -23,6 +23,8 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | **SimpleLogin Full App** | Source complete · Self-host ready | Full dashboard, subdomain, API under our control |
 | **Proton Pass**    | Not connected       | Password manager – no live OrgSuite connector    |
 | **Marketing Connectors** | Ready to Configure | Spotify Ads/Analytics + Meta Marketing API (official) |
+| **X (Twitter) API** | Ready to Configure | `@PointGoddessCc` · User ID `2048576362781331456`. Developer App + tokens required. See `docs/x-api-tracking.md` and `docs/bot-x-bridge-2026-08-23.md` |
+| **Bot ↔ Agent Bridge** | Design Completed | Primary path: `orgsuite-meta-ai-agent` (WhatsApp). Live webhook + env **Requires Authorization**. See `docs/bot-x-bridge-2026-08-23.md` |
 
 ### Primary Domain: psemanagement.services (2026-08-20)
 
@@ -50,6 +52,7 @@ Key facts:
   https://github.com/pointgoddesscc-sketch/orgsuite-marketing-connectors  
   Environment variables only · Least privilege · Audit logging required · No secrets in code.
 - **Make.com + OpenAI**: The OpenAI connection must be created inside Make.com (Connections → Create connection → paste API key from the secure phone folder). Status will move to “Connected – user confirmed” only after explicit confirmation. Secrets never leave Make’s encrypted store or the local device.
+- **X API** and **Bot ↔ Agent Bridge** packages prepared 2026-08-23. Live tokens and webhook activation remain owner-only (**Requires Authorization**). No secrets stored in Git or sandbox.
 - These connectors remain synchronized with the account used for Working Copy and ChatGPT.
 
-**Last updated:** 2026-08-20
+**Last updated:** 2026-08-23

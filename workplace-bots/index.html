@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="OrgSuite Workplace Bots — official-connector teammates for PSE Management. Approval-gated. No cloud login agent." />
+  <title>OrgSuite Workplace Bots</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-2: #101a2e;
+      --card: #152238;
+      --line: #24344f;
+      --text: #e8eef8;
+      --muted: #93a4bf;
+      --accent: #6ee7c5;
+      --accent-2: #7dd3fc;
+      --warn: #fbbf24;
+      --danger: #fb7185;
+      --ok: #34d399;
+      --shadow: 0 18px 50px rgba(0,0,0,.28);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    body { min-height: 100dvh; }
+    a { color: var(--accent-2); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 20px 16px 80px; }
+    header {
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: flex-start;
+      padding: 8px 0 18px;
+    }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .mark {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #9ef7de, #1d6b58 55%, #0b1220);
+      display: grid; place-items: center; font-weight: 700; letter-spacing: .04em;
+    }
+    h1 { font-size: 1.25rem; margin: 0; }
+    .sub { color: var(--muted); font-size: .92rem; margin-top: 2px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      border: 1px solid var(--line); background: var(--bg-2); color: var(--muted);
+      border-radius: 999px; padding: 6px 10px; font-size: .78rem; font-family: "IBM Plex Mono", monospace;
+    }
+    .banner {
+      border: 1px solid #35506f; background: linear-gradient(180deg, #17304a, #12263c);
+      border-radius: var(--radius); padding: 14px 16px; margin-bottom: 18px; box-shadow: var(--shadow);
+    }
+    .banner strong { color: var(--accent); }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 860px) {
+      .split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; align-items: start; }
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 16px; box-shadow: var(--shadow);
+    }
+    h2 { margin: 0 0 12px; font-size: 1.02rem; }
+    .bots { display: grid; gap: 10px; }
+    .bot {
+      width: 100%; text-align: left; cursor: pointer;
+      border: 1px solid var(--line); background: #112033; color: inherit;
+      border-radius: 14px; padding: 12px; display: grid; gap: 4px;
+    }
+    .bot:hover, .bot.active { border-color: #3d6a86; background: #173049; }
+    .bot .name { font-weight: 600; }
+    .bot .meta { color: var(--muted); font-size: .84rem; }
+    .status { font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .03em; }
+    .s-connected { color: var(--ok); }
+    .s-available { color: var(--accent-2); }
+    .s-ready { color: var(--warn); }
+    .s-proposed, .s-auth { color: #fca5a5; }
+    label { display: block; font-size: .82rem; color: var(--muted); margin: 10px 0 6px; }
+    textarea, select, input {
+      width: 100%; border-radius: 12px; border: 1px solid var(--line); background: #0e1a2c;
+      color: var(--text); padding: 10px 12px; font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    button.primary, button.ghost {
+      border-radius: 12px; padding: 10px 14px; font-weight: 600; cursor: pointer; border: 1px solid transparent;
+    }
+    button.primary { background: var(--accent); color: #06231b; }
+    button.ghost { background: transparent; color: var(--text); border-color: var(--line); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+    th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 500; }
+    .queue-item, .log-item {
+      border: 1px solid var(--line); border-radius: 12px; padding: 10px; margin-bottom: 8px; background: #102033;
+    }
+    .tiny { color: var(--muted); font-size: .78rem; }
+    footer { margin-top: 22px; color: var(--muted); font-size: .8rem; }
+    code { font-family: "IBM Plex Mono", monospace; font-size: .82em; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark">OS</div>
+        <div>
+          <h1>OrgSuite Workplace Bots</h1>
+          <div class="sub">Official connectors only. Approval-gated teammates for PSE Management.</div>
+        </div>
+      </div>
+      <div class="pills">
+        <span class="pill">PSE-68</span>
+        <span class="pill">Not App Store Grok Bot</span>
+        <span class="pill" id="clock"></span>
+      </div>
+    </header>
+
+    <div class="banner">
+      <strong>Architecture rule:</strong> these bots use workplace OAuth connectors (GitHub, Linear, Vercel, Gmail, Outlook, Calendar, Calendly, Teams, Notion, Figma, Canva, Stripe, Automations).
+      They do <strong>not</strong> store website passwords and they do <strong>not</strong> run a cloud computer that signs into vendor portals.
+      Irreversible actions stay in an approval queue.
+    </div>
+
+    <div class="split">
+      <div class="grid">
+        <section class="card">
+          <h2>Specialist bots</h2>
+          <div class="bots" id="bots"></div>
+        </section>
+        <section class="card">
+          <h2 id="composerTitle">Assign work</h2>
+          <p class="tiny" id="composerHelp">Pick a bot, describe the job, then queue it. Nothing is sent until you approve.</p>
+          <label for="task">Task</label>
+          <textarea id="task" placeholder="Example: Draft a Linear comment on PSE-68 summarizing connector status. Do not email anyone."></textarea>
+          <label for="risk">Risk class</label>
+          <select id="risk">
+            <option value="read">Read / summarize only</option>
+            <option value="draft" selected>Draft for approval</option>
+            <option value="write">Write after explicit approve</option>
+          </select>
+          <div class="row">
+            <button class="primary" id="queueBtn" type="button">Queue for approval</button>
+            <button class="ghost" id="clearBtn" type="button">Clear</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Approval queue</h2>
+          <div id="queue"><p class="tiny">Empty. Queued work stays on this device until you approve or discard it.</p></div>
+        </section>
+        <section class="card">
+          <h2>Connector matrix</h2>
+          <div style="overflow:auto">
+            <table>
+              <thead>
+                <tr><th>Surface</th><th>Status</th><th>What a bot may do</th></tr>
+              </thead>
+              <tbody id="matrix"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="card">
+          <h2>Session log</h2>
+          <div id="log"></div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      OrgSuite Codex App · Linear <a href="https://linear.app/pse-management/issue/PSE-68/orgsuite-workplace-bots-official-connector-agent-layer-not-grok-bot">PSE-68</a>
+      · GitHub <a href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace">orgsuite-workspace</a>
+      · Vercel team PSE SENT verified this session. This static UI does not itself call APIs.
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

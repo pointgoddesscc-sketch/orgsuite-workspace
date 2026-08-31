@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "case \"$VERCEL_PROJECT_NAME\" in orgsuite-godaddy-health|orgsuite-pointgoddess-sync) exit 0;; *) exit 1;; esac"
+}

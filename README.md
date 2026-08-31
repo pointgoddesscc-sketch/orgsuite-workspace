@@ -2,8 +2,11 @@
 
 **OrgSuite** is the unified workplace ecosystem for Point Goddess CC / PSE Management. It connects multi-AI work (Grok, ChatGPT/Codex, Copilot, and authorized companions), official connectors (GitHub, Linear, Vercel, Outlook, Gmail, Calendar, Teams, Notion, Figma, Stripe, Canva), secure domain operations, and family-safe home and device workflows into one command center.
 
+- Public site (SEO): https://orgsuite-public.vercel.app/
+- About: https://orgsuite-public.vercel.app/about.html
 - Live Command Center: https://orgsuite-codex-command-center.vercel.app/
 - Unified AI hub: https://orgsuite-command-center.vercel.app/
+- SEO Command Center build: https://orgsuite-command-center-github.vercel.app/
 - Public findability plan: [`docs/public-findability.md`](docs/public-findability.md)
 - Workplace issue: [PSE-69](https://linear.app/pse-management/issue/PSE-69/public-findability-google-outlook-and-official-orgsuite-surfaces)
 
@@ -119,6 +122,7 @@ Known verified entries:
 | Path | Purpose |
 |------|---------|
 | `docs/public-findability.md` | Official public positioning + Google/Outlook findability plan |
+| `docs/social-copy-pack-pse-69.md` | X / Telegram / Canva / Teams copy behind approval gates |
 | `docs/remote-chatgpt-control.md` | Remote + Working Copy + GitHub |
 | `docs/connectors-status.md` | Connectors status (including Agent + Proton) |
 | `docs/orgsuite-agent-simmple-login.md` | Full OrgSuite Agent documentation |

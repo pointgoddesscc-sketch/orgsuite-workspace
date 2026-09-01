@@ -1,65 +1,58 @@
 # Connectors Status – OrgSuite Workspace
 
-All connectors below are active and wired to **pointgoddesscc@gmail.com** unless otherwise noted.
+Workplace source of truth. Host: GitHub `pointgoddesscc-sketch/orgsuite-workspace` (PSE SENT Vercel team for linked projects).
 
-| Connector          | Status              | Primary Use                                      |
-|--------------------|---------------------|--------------------------------------------------|
-| Google Calendar    | Active              | Scheduling & events                              |
-| Calendly           | Active              | Availability & booking                           |
-| Linear             | Active (re-auth may be needed) | Issue tracking (PSE Management team)    |
-| Outlook            | Active              | Email & calendar                                 |
-| Microsoft Teams    | Active              | Collaboration                                    |
-| Figma              | Active              | Design files                                     |
-| Notion             | Active              | Documentation & knowledge base                   |
-| Vercel             | Active              | Deployments                                      |
-| Gmail              | Active              | Workplace Gmail plus Grok session mailbox `alonejamesowns@gmail.com` |
-| GitHub             | Active              | Source of truth for all code                     |
-| Stripe             | Active              | Payments (test mode available)                   |
-| **Canary Mail**    | Connected as client | Unified inbox client for Gmail. Not a vendor API. See `docs/canary-mail-copilot.md` and `docs/canary-mail-pro-restore.md`. PSE-70 |
-| **Canary Mail Copilot** | Not available via API | In-app only (`ai.canarymail.io`). GitHub Copilot cannot connect. |
-| **GitHub Copilot** | Available on GitHub | Code assistant for `pointgoddesscc-sketch`. Not a mail API. See `docs/copilot-cli-integration.md`. |
-| **GoDaddy**        | API-ready           | Domain & DNS for **psemanagement.services**. Keys on host/Vercel only. See `docs/godaddy-secure-integration.md` |
-| **Make.com + OpenAI** | Ready to Configure | Scenario automation + OpenAI modules (us2.make.com). Connection lives in Make encrypted store; not yet user-confirmed live. |
-| **simmple-login**  | Available           | OrgSuite Agent (Cloudflare Workers AI)           |
-| **Proton Mail**    | Documented / Manual | Secure inbox (see secure-mail doc)               |
-| **SimpleLogin (API clients)** | Documented / Working | Email aliases via existing Chrome/Safari clients |
-| **SimpleLogin Full App** | Source complete · Self-host ready | Full dashboard, subdomain, API under our control |
-| **Proton Pass**    | Not connected       | Password manager – no live OrgSuite connector    |
-| **Marketing Connectors** | Ready to Configure | Spotify Ads/Analytics + Meta Marketing API (official) |
-| **X (Twitter) API** | Ready to Configure | `@PointGoddessCc` · User ID `2048576362781331456`. Developer App + tokens required. See `docs/x-api-tracking.md` and `docs/bot-x-bridge-2026-08-23.md` |
-| **Bot ↔ Agent Bridge** | Design Completed | Primary path: `orgsuite-meta-ai-agent` (WhatsApp). Live webhook + env **Requires Authorization**. See `docs/bot-x-bridge-2026-08-23.md` |
-| **Siri / Shortcuts** | Design Completed | Apple-compliant Shortcut → HTTPS `/api/siri`. On-device install + token **Requires Authorization**. See `docs/siri-bridge-2026-08-23.md` |
+**Rule:** Status is Connected only when an official connector or verified forward exists. Saying “it is ours” does not create a vendor API session.
 
-### Primary Domain: psemanagement.services (2026-08-20)
+Official Grok surface: [grok.com](https://grok.com) / this Grok workspace. `grok.me` is not an xAI host used here.
 
-Full public record + Domains by Proxy contact + secure health-proxy architecture:
-→ **`docs/godaddy-secure-integration.md`**
+## Authorized connectors (this Grok workplace)
 
-Key facts:
-- Expires **2027-07-13**
-- Domain Lock **On**
-- External transfer available after **2026-09-11**
-- Name servers: ns07/ns08.domaincontrol.com
-- DNSSEC: Signed
-- Privacy email: `2dee023ea92f4d5ea44412520ce6ec9a@domainsbyproxy.com`
+| Connector | Status | Notes |
+|-----------|--------|-------|
+| Gmail | Connected | Live session mailbox `alonejamesowns@gmail.com`. Also reads mail to `chrisemerson360agency@gmail.com` in that account. |
+| Outlook | Connected | Separate mailbox |
+| Google Calendar | Connected | Free/busy |
+| Calendly | Connected | Booking |
+| GitHub | Connected | `pointgoddesscc-sketch` |
+| Vercel | Connected | Team PSE SENT (`pse-sent`) |
+| Linear | Connected | PSE Management |
+| Notion | Connected | |
+| Figma | Connected | |
+| Canva | Connected | |
+| Stripe | Connected | |
+| Microsoft Teams | Connected | |
+| Gmail Contacts / People API | Not available | No connector |
+| Gemini | Not available | No connector in this workspace |
 
-### Notes
+## Mail and privacy aliases (inbound only)
 
-- **Canary Mail Copilot (2026-09-01):** GitHub Copilot cannot attach to Canary Copilot. Architecture and official links live in `docs/canary-mail-copilot.md`. GitHub issue #8. Linear **PSE-70**.
-- **Canary Mail** remains a client. Delivery path: Gmail/Outlook draft → mailbox → Canary client. Prototype files: `chat-ui-prototype/`.
-- **simmple-login** is the official OrgSuite Agent. Full details: `docs/orgsuite-agent-simmple-login.md`
-- **Proton / SimpleLogin** addresses and aliases currently known are documented in `docs/secure-mail-proton-simplelogin.md`.
-- **SimpleLogin Full App** (complete self-host control layer) is permanently tracked in:
-  **`docs/simplelogin-selfhost-control.md`**  
-  Fork: https://github.com/pointgoddesscc-sketch/app  
-  This gives full ownership of dashboard, subdomain feature, and API. Local-dev and production self-host paths are documented there.
-- There is **no live API connector** for Proton Mail or Proton Pass. Aliases cannot be auto-synced from the hosted service. Any additional aliases must be added manually by the owner or via the self-hosted instance.
-- **Marketing Connectors** (Spotify Ads/Analytics + Meta Marketing API) are fully documented in the private repo:
-  https://github.com/pointgoddesscc-sketch/orgsuite-marketing-connectors  
-  Environment variables only · Least privilege · Audit logging required · No secrets in code.
-- **Make.com + OpenAI**: The OpenAI connection must be created inside Make.com (Connections → Create connection → paste API key from the secure phone folder). Status will move to “Connected – user confirmed” only after explicit confirmation. Secrets never leave Make’s encrypted store or the local device.
-- **X API**, **Bot ↔ Agent Bridge**, and **Siri / Shortcuts** packages prepared 2026-08-23. Live tokens, webhooks, and on-device Shortcut installation remain owner-only (**Requires Authorization**). No secrets stored in Git or sandbox.
-- **X posting hard-stops (2026-08-23):** Never paste keys into chat; `wrangler` login/deploy must run on owner terminal only; unattended AI → post is blocked pending human approval gate; Cloudflare workers `super-field-8d27` / `worker-odd-flower-c7e7` identity still unresolved. Tracked as **PSE-45**.
-- These connectors remain synchronized with the account used for Working Copy and ChatGPT.
+| Address / service | Status | Notes |
+|-------------------|--------|-------|
+| `30aa800b8c51400883f9307e174501f1@domainsbyproxy.com` | Connected as inbound forward | `donotreply@domainsbyproxy.com` → `chrisemerson360agency@gmail.com` (verified 2026-09-01) |
+| `2dee023ea92f4d5ea44412520ce6ec9a@domainsbyproxy.com` | Documented | psemanagement.services privacy alias (see `docs/godaddy-secure-integration.md`) |
+| GoDaddy Conversations `kidrockmananagement.com` | Workspace verified via Gmail notifications | Not a Conversations admin API |
+| Canary Mail | Client only | Syncs the Gmail mailbox. No Canary team API. Ticket delete stays in the Canary app. |
+| Canary Mail Copilot | Not available via API | |
+| Proton Mail / Proton Pass | Not connected | Documented only |
+| SimpleLogin hosted API | Not connected | Self-host docs only |
+| Meta / ChatGPT / OpenAI account login | Not connected | Mail wrappers ≠ session |
+| Domains By Proxy control panel | Requires Authorization | Owner signs in at the registrar |
 
-**Last updated:** 2026-09-01
+## Hosting we own
+
+- GitHub workspace: https://github.com/pointgoddesscc-sketch/orgsuite-workspace
+- License nodes: https://github.com/pointgoddesscc-sketch/orgsuite-canary-ios-acknowledgements
+- Vercel acknowledgements project: https://orgsuite-canary-acknowledgements.vercel.app
+- Vercel team: PSE SENT — no catch-all login proxy deployed
+
+## What this workplace page is not
+
+- Not a password vault
+- Not a Canary / Proton / Meta / DBP login bridge
+- Not a Gemini or grok.me host
+- Not proof that every address in Gmail has an API
+
+Owner next steps stay official: authorize each vendor in its own product, then we mark that row Connected.
+
+**Last updated:** 2026-09-02

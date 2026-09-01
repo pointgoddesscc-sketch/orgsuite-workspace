@@ -15,10 +15,18 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 | **simmple-login** | Official OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
 | **orgsuite-marketing-connectors** (private) | Official Spotify Ads/Analytics + Meta Marketing API setup – env vars only, least privilege, audit logging |
 
+## Chat UI Prototype
+
+| Surface | Status | Path |
+|---------|--------|------|
+| OrgSuite Chat UI Prototype | Completed (static) | `chat-ui-prototype/` |
+| Canary Mail channel | Completed in UI / Ready to Configure on device | `docs/chat-ui-prototype.md` |
+
 ## Secure Mail
 
 | Service | Status | Doc |
 |---------|--------|-----|
+| Canary Mail (Gmail/Outlook/IMAP client) | Ready to Configure on device | `docs/canary-mail-pro-restore.md` · PSE-62 |
 | Proton Mail + SimpleLogin | Documented (manual) | `docs/secure-mail-proton-simplelogin.md` |
 | Proton Pass | Not connected (no live connector) | Same doc |
 
@@ -30,6 +38,7 @@ Known aliases: `pacerssportsent@pm.me`, `psebank@pm.me`, `igpt.flannels193@8shie
 |------------|---------|
 | simmple-login | OrgSuite Agent |
 | orgsuite-marketing-connectors | Official marketing connectors (Spotify + Meta) |
+| orgsuite-canary-ios-acknowledgements | Canary Mail iOS license nodes |
 | codex | Main Codex marketing & website foundation |
 | orgsuite-open-source-licenses | Enterprise license attribution |
 | orgsuite-ai-os | Multi-agent Organisation Intelligence Platform |

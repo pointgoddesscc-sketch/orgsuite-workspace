@@ -15,6 +15,7 @@ All connectors below are active and wired to **pointgoddesscc@gmail.com** unless
 | Gmail              | Active              | Primary email (pointgoddesscc@gmail.com)         |
 | GitHub             | Active              | Source of truth for all code                     |
 | Stripe             | Active              | Payments (test mode available)                   |
+| **Canary Mail**    | Ready to Configure (device) | Chat UI channel + unified inbox client. Not a vendor API. Mail arrives via Gmail/Outlook/IMAP. See `docs/chat-ui-prototype.md` and `docs/canary-mail-pro-restore.md`. PSE-62 |
 | **GoDaddy**        | API-ready           | Domain & DNS for **psemanagement.services**. Keys on host/Vercel only. See `docs/godaddy-secure-integration.md` |
 | **Make.com + OpenAI** | Ready to Configure | Scenario automation + OpenAI modules (us2.make.com). Connection lives in Make encrypted store; not yet user-confirmed live. |
 | **simmple-login**  | Available           | OrgSuite Agent (Cloudflare Workers AI)           |
@@ -42,6 +43,7 @@ Key facts:
 
 ### Notes
 
+- **Canary Mail** was added to the OrgSuite Chat UI Prototype on 2026-09-01 as a first-class channel. There is no public Canary login API. Delivery path: Gmail/Outlook draft → mailbox → Canary client. Prototype files: `chat-ui-prototype/`.
 - **simmple-login** is the official OrgSuite Agent. Full details: `docs/orgsuite-agent-simmple-login.md`
 - **Proton / SimpleLogin** addresses and aliases currently known are documented in `docs/secure-mail-proton-simplelogin.md`.
 - **SimpleLogin Full App** (complete self-host control layer) is permanently tracked in:
@@ -57,4 +59,4 @@ Key facts:
 - **X posting hard-stops (2026-08-23):** Never paste keys into chat; `wrangler` login/deploy must run on owner terminal only; unattended AI → post is blocked pending human approval gate; Cloudflare workers `super-field-8d27` / `worker-odd-flower-c7e7` identity still unresolved. Tracked as **PSE-45**.
 - These connectors remain synchronized with the account used for Working Copy and ChatGPT.
 
-**Last updated:** 2026-08-23
+**Last updated:** 2026-09-01

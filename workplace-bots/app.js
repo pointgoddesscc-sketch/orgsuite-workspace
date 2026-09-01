@@ -4,6 +4,7 @@ const CONNECTORS = [
   { name: "Vercel", status: "Connected", note: "Team PSE SENT (hobby) listed. Deploy of this UI not performed." },
   { name: "Gmail", status: "Available", note: "Search + draft tools present. Send is irreversible — approval required." },
   { name: "Outlook", status: "Available", note: "Search tools present. Do not send from UI." },
+  { name: "Canary Mail", status: "Ready to Configure", note: "Device email client only. No vendor API. Drafts reach Canary after approved Gmail/Outlook send. Chat UI channel added. PSE-62." },
   { name: "Google Calendar", status: "Available", note: "Search/create tools present. Create events only after approve." },
   { name: "Calendly", status: "Available", note: "Availability + event-type tools present." },
   { name: "Microsoft Teams", status: "Available", note: "List/read/send tools present. Send requires approve." },
@@ -29,9 +30,9 @@ const BOTS = [
   {
     id: "inbox",
     name: "Inbox Manager",
-    connectors: "Gmail · Outlook",
+    connectors: "Gmail · Outlook · Canary Mail",
     status: "Available",
-    help: "Triages mail and writes drafts. Never sends unless you explicitly approve a send tool call."
+    help: "Triages mail and writes drafts that can appear in Canary after send. Never sends unless you explicitly approve a send tool call. Does not log into Canary."
   },
   {
     id: "calendar",
@@ -207,4 +208,4 @@ tick();
 setInterval(tick, 30000);
 $("composerTitle").textContent = selected.name;
 $("composerHelp").textContent = selected.help;
-log("Workplace Bots UI loaded. GitHub + Linear verified in the originating Grok session. This static file does not open live sessions.");
+log("Workplace Bots UI loaded. Canary Mail is listed as a device inbox, not a live API. This static file does not open live sessions.");

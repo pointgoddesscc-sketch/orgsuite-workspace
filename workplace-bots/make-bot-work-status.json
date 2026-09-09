@@ -1,7 +1,15 @@
 {
-  "verified_at": "2026-09-09T20:00:00+01:00",
+  "verified_at": "2026-09-09T20:10:00+01:00",
   "issue": "PSE-80",
+  "pr": 10,
+  "pr_state": "merged",
   "engine": "local-make-bot-work",
+  "vercel": {
+    "team": "PSE SENT",
+    "project": "orgsuite-make-bot-work",
+    "url": "https://orgsuite-make-bot-work.vercel.app"
+  },
+  "forge": "https://workwithbot.grok.me/",
   "google": {
     "gmail": "Connected",
     "calendar": "Connected",

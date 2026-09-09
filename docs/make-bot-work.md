@@ -6,14 +6,21 @@ Checklist: https://linear.app/pse-management/document/orgsuite-connector-rollout
 
 GitHub: https://github.com/pointgoddesscc-sketch/orgsuite-workspace
 
-Command Center (existing, not this engine): https://orgsuite-command-center.vercel.app
+## Live surfaces
 
-## Verified 2026-09-09 20:00 WAT
+- Grok Forge (xAI product): https://workwithbot.grok.me/
+- Vercel console (PSE SENT): https://orgsuite-make-bot-work.vercel.app
+- Existing workplace bots: https://orgsuite-workplace-bots.vercel.app
+- Command Center: https://orgsuite-command-center.vercel.app
 
-Connected after live probe: Linear, GitHub, Gmail, Google Calendar, Google Drive (PIP), Outlook.
+`workwithbot.grok.me` is an xAI-hosted Forge login. It cannot be attached as a Vercel custom domain. The workplace console is the Vercel project; Forge remains the bot builder.
 
-Requires Authorization: Google Contacts, Google Chat, Teams, Make.com team run, GoDaddy keys, Anthropic key.
+## Verified 2026-09-09 20:10 WAT
 
-Available / Ready to Configure: Gemini tools, Grok session, local engine, Meta AI templates.
+Connected: Linear, GitHub, Vercel (PSE SENT), Gmail, Google Calendar, Google Drive (PIP), Outlook.
+
+Requires owner OAuth tap in Grok: Google Contacts, Google Chat.
+
+PR #10 is merged. Follow-up branch `pse-80-public-console` records the public console.
 
 The local engine does not inherit Grok OAuth tokens. Host env + official OAuth apps are still required for the engine process to call Google APIs itself.

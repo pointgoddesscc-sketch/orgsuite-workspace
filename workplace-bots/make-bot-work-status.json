@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-09-09T20:00:00+01:00",
+  "issue": "PSE-80",
+  "engine": "local-make-bot-work",
+  "google": {
+    "gmail": "Connected",
+    "calendar": "Connected",
+    "drive_pip": "Connected",
+    "contacts": "Requires Authorization",
+    "chat": "Requires Authorization",
+    "gemini": "Available"
+  }
+}

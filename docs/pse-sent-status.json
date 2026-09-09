@@ -1,0 +1,8 @@
+{
+  "domain": "pse-sent.com",
+  "issue": "PSE-81",
+  "vercel": "https://pse-sent-com.vercel.app",
+  "nameservers": ["gene.ns.cloudflare.com", "jobs.ns.cloudflare.com"],
+  "mail": "iCloud",
+  "dmarc": "missing"
+}

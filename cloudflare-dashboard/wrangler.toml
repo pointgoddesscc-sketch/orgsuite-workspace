@@ -1,0 +1,10 @@
+name = "orgsuite-cf-dash"
+main = "src/worker.js"
+compatibility_date = "2026-09-14"
+
+[observability]
+enabled = true
+
+[[routes]]
+pattern = "dash.pse-sent.com/*"
+zone_name = "pse-sent.com"

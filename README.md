@@ -1,163 +1,117 @@
 # OrgSuite Workspace
 
-**OrgSuite** is the unified workplace ecosystem for Point Goddess CC / PSE Management. It connects multi-AI work (Grok, ChatGPT/Codex, Copilot, and authorized companions), official connectors (GitHub, Linear, Vercel, Outlook, Gmail, Calendar, Teams, Notion, Figma, Stripe, Canva), secure domain operations, and family-safe home and device workflows into one command center.
+**OrgSuite** is the unified workplace ecosystem for Point Goddess CC / PSE Management.
 
-- Public site (SEO): https://orgsuite-public.vercel.app/
-- About: https://orgsuite-public.vercel.app/about.html
-- Live Command Center: https://orgsuite-codex-command-center.vercel.app/
-- Unified AI hub: https://orgsuite-command-center.vercel.app/
-- SEO Command Center build: https://orgsuite-command-center-github.vercel.app/
-- Public findability plan: [`docs/public-findability.md`](docs/public-findability.md)
-- Workplace issue: [PSE-69](https://linear.app/pse-management/issue/PSE-69/public-findability-google-outlook-and-official-orgsuite-surfaces)
+It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, secure domain operations, and device workflows into one command center.
 
----
+## Live Surfaces
 
-## Current Status (2026-08-21)
+| Surface | URL |
+|---------|-----|
+| Primary production domain | https://pse-sent.com |
+| MCP gateway | https://mcp.pse-sent.com/api/mcp |
+| Codex Command Center | https://orgsuite-codex-command-center.vercel.app |
+| Unified AI hub | https://orgsuite-command-center.vercel.app |
+| Public / SEO site | https://orgsuite-public.vercel.app |
 
-- Working Copy clone: complete
-- GitHub plugin: authorized with admin access
-- ChatGPT Codex + Remote: connected
-- ChatGPT Codex: connected and following AGENTS.md + docs/ rules
-- GitHub Actions: active
-- Brand avatar: synced across GitHub, GitLab, X, Gravatar, Meta
-- All primary connectors: live under [pointgoddesscc@gmail.com](mailto:pointgoddesscc@gmail.com)
-- **simmple-login** (OrgSuite Agent) fully documented in this hub
-- **Proton Mail + SimpleLogin** secure mail aliases documented (manual / no live connector)
-
-**Primary professional hub for Point Goddess CC / PSE Management**
-
-This is the recommended repository to clone into **Working Copy** on iPhone and to remotely control **ChatGPT Codex** via GitHub.
+**Source of truth:** this repository  
+**Linear project:** [OrgSuite Codex App](https://linear.app/pse-management/project/orgsuite-codex-app-9146b449b7a1)  
+**Vercel team:** PSE SENT
 
 ---
 
-## Quick Start – Working Copy (iPhone)
+## Current Status — 2026-09-14
 
-1. Open **Working Copy**
-2. Open (or clone) this repository:
-   ```
-   https://github.com/pointgoddesscc-sketch/orgsuite-workspace.git
-   ```
-   Prefer the clean local name **orgsuite-workspace-2** if you already use it.
-3. Tap **Pull** to receive the latest files
+### Tier 1 — Production Core (priority)
 
-### Configure Git identity (required once per repo if missing)
+| Item | Status | Linear |
+|------|--------|--------|
+| pse-sent.com Cloudflare zone + DNS | **Done** | PSE-81 |
+| Production AI Workplace (OAuth 2.1 + MCP gateway + connector registry) | In Progress | PSE-86 |
+| Secured Workplace (identity, secrets, least privilege, audit) | In Review | PSE-77 |
+| Cloudflare dashboard (`dash.pse-sent.com`) | In Progress | PSE-98 |
+| Cloudflare edge host (`host.pse-sent.com`) | In Progress | PSE-97 |
 
-1. Open the repository → **Configuration**
-2. Set:
-   - **Name:** `Point Goddess CC`
-   - **Email:** `pointgoddesscc@gmail.com`
-3. Save
+### Tier 2 — Connectors (active this week)
 
-Without identity, commits may fail or show “Identity not configured”.
+| Connector | Status | Linear |
+|-----------|--------|--------|
+| Meta (Facebook / Messenger / Business Suite / AI Router) | **Done** | PSE-99 |
+| Google + Microsoft cloud storage mount (Drive / OneDrive) | **Done** | PSE-100 |
+| Firebase workplace connector | In Progress | PSE-102 |
+| ASC MCP (App Store Connect) | In Progress | PSE-73 |
+| SimpleLogin MCP | In Progress | PSE-83 |
+| Official Meta MCP servers → Grok | In Progress | PSE-95 |
+| Apple Account workplace bind | In Progress | PSE-101 |
+| Telegram MCP arming | In Progress | PSE-87 |
 
----
+### Tier 3 — Features & Surfaces
 
-## Daily professional workflow (with Push)
+| Feature | Status | Notes |
+|---------|--------|-------|
+| PSE Bank demo platform | In Progress | PSE-93 |
+| World Cup match centre | Backlog / deployed | PSE-91 / PSE-92 |
+| Calendar as main feature + Siri bridge | Backlog | PSE-43 |
+| Radio / Podcast / News Station | Backlog | PSE-50 / PSE-51 |
+| Public findability | In Progress | PSE-69 |
 
-```text
-1. Working Copy → Pull
-2. Configure identity if needed (name + email above)
-3. Make changes (or receive them via Codex PR merge)
-4. Commit
-5. Push  ← required to publish commits to GitHub
-6. Open / merge Pull Request on GitHub when using a feature branch
-7. Working Copy → Pull again
-```
-
-### Push step (Working Copy)
-
-1. After **Commit**, open the repository status
-2. Tap **Push** (or Pull/Push control)
-3. Confirm push to `origin` (usually `main` or your feature branch)
-
-**Do not force-push to `main`.** Force push can overwrite history and break the hub. Use a normal Push only. If a push is rejected, Pull first, resolve conflicts, then Push again.
+Full connector matrix: [`docs/connectors-status.md`](docs/connectors-status.md)  
+Full repository index: [`docs/workplace-index.md`](docs/workplace-index.md)
 
 ---
 
-## Quick Start – Remote ChatGPT Codex
+## Recommended Daily Order of Work
 
-1. Desktop ChatGPT (pointgoddesscc@gmail.com) → Codex → Connect GitHub plugin → authorize this repository (`pointgoddesscc-sketch/orgsuite-workspace`).
-2. iPhone ChatGPT → Codex → **Remote** → pair with desktop.
-3. Work via Remote; changes flow through GitHub → Working Copy (Pull).
-4. Codex follows the rules in `AGENTS.md` (source of truth for agent behavior).
-
-Full guide: `docs/remote-chatgpt-control.md`
-
-**Important:** Codex must never claim remote control of Edge, local tabs, cookies, or sessions. All work stays on official authenticated paths only.
+1. **Security & production core** (PSE-77, PSE-86, PSE-46 if still open)
+2. **Active connectors** that unblock other work (Firebase, ASC MCP, Telegram MCP, Cloudflare surfaces)
+3. **Mail & identity** (PSE-96 Proton MX, Apple bind)
+4. **Feature surfaces** (Bank, Calendar, Radio)
+5. **Backlog / polish**
 
 ---
 
-## Primary daily repos
+## Quick Start – Working Copy (iPhone / Android)
 
-| Repo | Role |
-|------|------|
-| **orgsuite-workspace** | Documentation hub + workflow (this repo) |
-| **simmple-login** | OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
-| **slack-bot** | Slack automation |
-| **stripe-dashboard** | Stripe dashboard |
-| **marketing-page** | Vercel marketing site |
-| **adsgpt-psemanagement** | AdsGPT landing + Proton / SimpleLogin links |
+1. Clone: `https://github.com/pointgoddesscc-sketch/orgsuite-workspace.git`
+2. Set identity once:
+   - Name: `Point Goddess CC`
+   - Email: `pointgoddesscc@gmail.com`
+3. Daily: Pull → work → Commit → Push → (PR if on feature branch)
 
-Secondary clones (e.g. `llm-chat-app-mail` on GitLab) are optional after you commit any pending work there.
+**Never force-push to `main`.**
 
 ---
 
-## Secure Mail (Proton + SimpleLogin)
+## Quick Start – ChatGPT Codex / Grok
 
-Documented addresses and aliases live in:
-
-**`docs/secure-mail-proton-simplelogin.md`**
-
-Known verified entries:
-- Proton: `pacerssportsent@pm.me`, `psebank@pm.me`
-- SimpleLogin alias domain: `8shield.net`
-- Project alias: `igpt.flannels193@8shield.net`
-
-**Proton Pass** itself has no live OrgSuite connector — aliases cannot be auto-pulled. See the secure-mail doc for the current limitation and recommended next steps.
+- This repository is the designated primary hub.
+- Follow `AGENTS.md` and everything under `docs/`.
+- Prefer feature branches + Pull Requests.
+- Never invent live connectors, credentials, or remote browser control.
+- Status labels: **Completed / Connected / Available / Ready to Configure / Proposed / Requires Authorization**.
 
 ---
 
-## What is included
+## Key Documentation
 
-| Path | Purpose |
-|------|---------|
-| `docs/public-findability.md` | Official public positioning + Google/Outlook findability plan |
-| `docs/social-copy-pack-pse-69.md` | X / Telegram / Canva / Teams copy behind approval gates |
-| `docs/remote-chatgpt-control.md` | Remote + Working Copy + GitHub |
-| `docs/connectors-status.md` | Connectors status (including Agent + Proton) |
-| `docs/orgsuite-agent-simmple-login.md` | Full OrgSuite Agent documentation |
-| `docs/secure-mail-proton-simplelogin.md` | Proton Mail + SimpleLogin aliases |
-| `docs/avatar-sync.md` | Avatar tracking matrix |
-| `docs/brand-identity.md` | Brand identity |
-| `docs/x-api-tracking.md` | X API tracking |
-| `docs/workplace-index.md` | Repository index |
-| `.githooks/` | pre-commit + post-merge |
-| `.github/workflows/` | docs-check + secret-scan |
-| `.env.example` | Safe environment template |
-| `AGENTS.md` | Instructions for AI agents (Codex + Grok) |
+| Document | Purpose |
+|----------|---------|
+| [`AGENTS.md`](AGENTS.md) | Rules for Codex, Grok, and any agent |
+| [`docs/connectors-status.md`](docs/connectors-status.md) | Live connector matrix (source of truth) |
+| [`docs/workplace-index.md`](docs/workplace-index.md) | Repository map |
+| [`docs/cloud-connectors.md`](docs/cloud-connectors.md) | Cloud storage architecture |
+| [`docs/secure-mail-proton-simplelogin.md`](docs/secure-mail-proton-simplelogin.md) | Mail aliases |
+| [`PRODUCTION-PSE-SENT.md`](PRODUCTION-PSE-SENT.md) | pse-sent.com notes |
+| [`docs/public-findability.md`](docs/public-findability.md) | SEO / public positioning |
 
 ---
 
-## GitHub Actions
+## Account & Team
 
-- **docs-check.yml** – documentation structure on push/PR
-- **secret-scan.yml** – basic secret pattern scanning
+- **Email:** pointgoddesscc@gmail.com  
+- **GitHub:** pointgoddesscc-sketch  
+- **Linear:** PSE Management  
+- **Vercel team:** PSE SENT  
+- **X:** @PointGoddessCc
 
----
-
-## Connectors (summary)
-
-Google Calendar · Calendly · Linear · Outlook · Microsoft Teams · Figma · Notion · Vercel · Gmail · GitHub · Stripe  
-+ **simmple-login** (OrgSuite Agent)  
-+ Proton Mail / SimpleLogin (documented, manual)  
-
-All primary connectors wired to `pointgoddesscc@gmail.com`.
-
----
-
-**Account:** pointgoddesscc@gmail.com  
-**GitHub:** pointgoddesscc-sketch  
-**X:** @PointGoddessCc  
-**Linear team:** PSE Management
-
-This workspace is fully configured, professional, and production-ready.
+This workspace is arranged as the single professional source of truth for OrgSuite.

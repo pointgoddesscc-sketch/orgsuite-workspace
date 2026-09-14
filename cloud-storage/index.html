@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="OrgSuite Workplace Cloud Storage — Google Drive and OneDrive mount status for PSE Management." />
+  <title>OrgSuite Cloud Storage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1220; --bg-2: #101a2e; --card: #152238; --line: #24344f; --text: #e8eef8;
+      --muted: #93a4bf; --accent: #6ee7c5; --accent-2: #7dd3fc; --warn: #fbbf24; --ok: #34d399;
+      --danger: #fb7185; --shadow: 0 18px 50px rgba(0,0,0,.28); --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    body { min-height: 100dvh; }
+    a { color: var(--accent-2); }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 20px 16px 80px; }
+    header { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: flex-start; padding: 8px 0 18px; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .mark { width: 44px; height: 44px; border-radius: 12px; background: radial-gradient(circle at 30% 20%, #9ef7de, #1d6b58 55%, #0b1220); display: grid; place-items: center; font-weight: 700; }
+    h1 { font-size: 1.25rem; margin: 0; }
+    .sub { color: var(--muted); font-size: .92rem; margin-top: 2px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { border: 1px solid var(--line); background: var(--bg-2); color: var(--muted); border-radius: 999px; padding: 6px 10px; font-size: .78rem; font-family: "IBM Plex Mono", monospace; }
+    .banner { border: 1px solid #35506f; background: linear-gradient(180deg, #17304a, #12263c); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 18px; box-shadow: var(--shadow); }
+    .banner strong { color: var(--accent); }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 900px) {
+      .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+    h2 { margin: 0 0 12px; font-size: 1.02rem; }
+    .status { font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .03em; }
+    .s-connected { color: var(--ok); }
+    .s-available { color: var(--accent-2); }
+    .s-ready { color: var(--warn); }
+    .s-auth { color: var(--danger); }
+    .meter { height: 8px; border-radius: 99px; background: #0e1a2c; overflow: hidden; margin: 8px 0 4px; }
+    .meter > span { display: block; height: 100%; background: linear-gradient(90deg, #34d399, #7dd3fc); }
+    table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+    th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 500; }
+    .cmd { border: 1px solid var(--line); border-radius: 12px; padding: 10px; margin-bottom: 8px; background: #102033; }
+    .cmd code { font-family: "IBM Plex Mono", monospace; font-size: .82em; color: var(--accent); }
+    .tiny { color: var(--muted); font-size: .78rem; }
+    .drop { border: 1px dashed #3d6a86; border-radius: 14px; padding: 22px; text-align: center; color: var(--muted); background: #102033; }
+    footer { margin-top: 22px; color: var(--muted); font-size: .8rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    button { border-radius: 12px; padding: 9px 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--line); background: #112033; color: var(--text); }
+    button.primary { background: var(--accent); color: #06231b; border-color: transparent; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark">OS</div>
+        <div>
+          <h1>OrgSuite Cloud Storage</h1>
+          <div class="sub">Unified Google Drive + OneDrive workplace mount. Snapshots only — this page does not hold OAuth tokens.</div>
+        </div>
+      </div>
+      <div class="pills">
+        <span class="pill">PSE-100</span>
+        <span class="pill">OAuth 2.1 + PKCE</span>
+        <span class="pill" id="clock"></span>
+      </div>
+    </header>
+    <div class="banner">
+      <strong>Verified 2026-09-14:</strong> Gmail and Outlook mail are Connected. Google Drive is Connected through PIP
+      (<code>pointgoddesscc@gmail.com</code>, 0.41 GB / 15 GB). Native Drive MCP and OneDrive Files are
+      <strong>Requires Authorization</strong>. Outlook does not unlock OneDrive by itself.
+    </div>
+    <div class="three" style="margin-bottom:16px">
+      <section class="card">
+        <h2>Gmail</h2>
+        <div class="status s-connected">CONNECTED</div>
+        <p>ORG SUITE · pointgoddesscc@gmail.com</p>
+        <p class="tiny">527 messages · 421 threads · inbox live this session</p>
+      </section>
+      <section class="card">
+        <h2>Google Drive</h2>
+        <div class="status s-connected">CONNECTED (PIP)</div>
+        <p>0.41 GB used of 15 GB</p>
+        <div class="meter" aria-label="Drive usage"><span style="width:2.7%"></span></div>
+        <p class="tiny">Native Drive MCP still Requires Authorization</p>
+      </section>
+      <section class="card">
+        <h2>Outlook</h2>
+        <div class="status s-connected">CONNECTED</div>
+        <p>chrisemerson360agency@outlook.com</p>
+        <p class="tiny">Inbox 113 · 82 unread · 6 drafts</p>
+      </section>
+    </div>
+    <div class="split">
+      <section class="card">
+        <h2>Google Drive mount</h2>
+        <p class="tiny">Provider SSO target: Gmail + Drive + Docs + Sheets + Calendar in one PKCE consent.</p>
+        <table>
+          <thead><tr><th>API</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Gmail API</td><td class="status s-connected">Connected</td></tr>
+            <tr><td>Drive API (PIP)</td><td class="status s-connected">Connected</td></tr>
+            <tr><td>Drive API (native MCP)</td><td class="status s-auth">Requires Authorization</td></tr>
+            <tr><td>Docs / Sheets create</td><td class="status s-available">Available via PIP</td></tr>
+            <tr><td>Calendar API</td><td class="status s-connected">Connected</td></tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <button class="primary" type="button" disabled title="Needs native Drive MCP">Browse My Drive</button>
+          <button type="button" id="copyGoogle">Copy Drive status</button>
+        </div>
+      </section>
+      <section class="card">
+        <h2>OneDrive mount</h2>
+        <p class="tiny">Provider SSO target: Mail + Files.ReadWrite.All + Calendars + User.Read + offline_access.</p>
+        <table>
+          <thead><tr><th>Graph permission</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Mail.ReadWrite / Mail.Send</td><td class="status s-connected">Connected (Outlook tools)</td></tr>
+            <tr><td>Files.ReadWrite.All</td><td class="status s-auth">Requires Authorization</td></tr>
+            <tr><td>Calendars.ReadWrite</td><td class="status s-ready">Ready to Configure</td></tr>
+            <tr><td>User.Read</td><td class="status s-connected">Implied by Outlook session</td></tr>
+            <tr><td>offline_access</td><td class="status s-ready">Vault not claimed in this chat</td></tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <button class="primary" type="button" disabled title="OneDrive connector not authorized">Browse OneDrive</button>
+          <button type="button" id="copyMs">Copy Microsoft status</button>
+        </div>
+      </section>
+    </div>
+    <div class="split" style="margin-top:16px">
+      <section class="card">
+        <h2>Unified files panel</h2>
+        <div class="drop" id="drop">
+          Drag-and-drop is Proposed until both mounts are authorized.<br />
+          This static page never receives a file upload or token.
+        </div>
+        <p class="tiny" style="margin-top:10px">Preview targets: PDF, Word, Excel, images, video — via vendor webView links after mount.</p>
+      </section>
+      <section class="card">
+        <h2>Assistant commands</h2>
+        <div class="cmd"><code>Open my Google Drive.</code><div class="tiny">PIP Drive search — Connected. Native MCP — Requires Authorization.</div></div>
+        <div class="cmd"><code>Search my Gmail attachments.</code><div class="tiny">gmail_search has:attachment — Connected.</div></div>
+        <div class="cmd"><code>Find contracts in OneDrive.</code><div class="tiny">Graph search — Requires Authorization.</div></div>
+        <div class="cmd"><code>Create a Word document in OneDrive.</code><div class="tiny">Graph item create — Requires Authorization.</div></div>
+        <div class="cmd"><code>Save this PDF to Google Drive.</code><div class="tiny">PIP Drive create — Available.</div></div>
+        <div class="cmd"><code>Move this spreadsheet from Drive to OneDrive.</code><div class="tiny">Blocked until OneDrive Files scope.</div></div>
+      </section>
+    </div>
+    <footer>
+      OrgSuite Codex App ·
+      <a href="https://linear.app/pse-management/issue/PSE-100/google-microsoft-cloud-connectors-drive-and-onedrive-workplace-mount">PSE-100</a>
+      · <a href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace">orgsuite-workspace</a>
+      · Snapshot UI only. Refresh tokens stay in the Workplace Vault, never in this file.
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

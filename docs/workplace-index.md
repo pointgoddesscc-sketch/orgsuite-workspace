@@ -15,6 +15,16 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 | **simmple-login** | Official OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
 | **orgsuite-marketing-connectors** (private) | Official Spotify Ads/Analytics + Meta Marketing API setup – env vars only, least privilege, audit logging |
 
+## Cloud storage (PSE-100)
+
+| Surface | Status | Path |
+|---------|--------|------|
+| Connector architecture | Completed (docs) | `docs/cloud-connectors.md` |
+| Cloud Storage workplace page | Completed (static) | `cloud-storage/` |
+| Gmail + Outlook mail | Connected | Live Grok connectors |
+| Google Drive (PIP) | Connected | Live PIP Drive identity ORG SUITE |
+| Native Drive MCP + OneDrive | Requires Authorization | Owner Grok connector cards |
+
 ## Chat UI Prototype
 
 | Surface | Status | Path |

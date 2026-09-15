@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://psemanagement.services/sitemap.xml

@@ -1,1 +1,1 @@
-Indiana Fevers Management Services platform source. Production HTML is published to Cloudflare KV key site:index and served by psemanagement-origin.
+Indiana Fevers Management Services production site files. Live deploy is the Vercel psemanagement project proxied by the Cloudflare origin worker.

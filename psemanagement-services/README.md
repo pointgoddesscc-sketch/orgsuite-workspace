@@ -1,1 +1,1 @@
-Indiana Fevers Management Services production static site for psemanagement.services. Deployed via Vercel project psemanagement. Official Fever sources: fever.wnba.com.
+Indiana Fevers Management Services platform source. Production HTML is published to Cloudflare KV key site:index and served by psemanagement-origin.

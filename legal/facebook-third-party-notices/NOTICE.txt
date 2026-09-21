@@ -1,0 +1,46 @@
+OrgSuite Facebook / Meta Third-Party Notices
+
+ATTRIBUTION ONLY: This document is for attribution purposes only and does not indicate a live connection to Facebook or Meta platforms.
+
+Official Third-Party Notices URL Correction:
+Please note that the URL for Facebook/Meta's official third-party notices has been observed to be `mobile.facebook.com/legal/thirdparty.com`. For the most official and up-to-date information, refer to Meta Platforms, Inc.'s official legal documentation.
+
+ACE/DOC Software License:
+Captured from Facebook mobile notices (ACE TAO CIAO DAnCE CoSMIC)
+
+Copyright (c) 1993-2009 Douglas C. Schmidt et al.
+Washington University
+University of California, Irvine
+Vanderbilt University
+
+Official DOC Page: https://www.dre.vanderbilt.edu/~schmidt/ACE-copying.html
+
+Required Facebook iOS SDK Copyright:
+Copyright (c) 2014-present, Meta Platforms, Inc. All rights reserved.
+
+Android and Mixpanel Apache-2.0 Licenses:
+The following components, as captured from `facebook-android-sdk/NOTICE.txt`, are subject to the Apache License, Version 2.0:
+- Android SDK
+- Mixpanel
+
+Apache 2.0 Component Name List:
+The following components are licensed under Apache License, Version 2.0:
+- OpenXR-SDK
+- Starscream
+- Wangle
+- Yarpl
+- abseil-cpp
+- ejs
+- flatbuffers
+- flatcc
+- folly
+- libphonenumber-ios
+- mathjs
+- mbedtls
+- msgpack-objectivec
+- opencv_contrib
+- llvm-project
+
+Meta Policy URLs:
+For current Meta Platforms, Inc. policies, please refer to their official websites.
+

@@ -1,0 +1,138 @@
+{
+  "title": "OrgSuite Facebook / Meta Third-Party Notices",
+  "generated": "2026-09-21",
+  "live_connection": false,
+  "capture": {
+    "name": "ACE/DOC Screenshot",
+    "description": "Screenshot of ACE/DOC license from official Meta mobile legal page.",
+    "source": "Owner provided screenshot"
+  },
+  "official_sources": [
+    {
+      "name": "Facebook/Meta Mobile Third-Party Notices",
+      "url": "mobile.facebook.com/legal/thirdparty.com",
+      "notes": "Observed URL for mobile notices; URL correction applied."
+    },
+    {
+      "name": "DOC Official License Page",
+      "url": "https://www.dre.vanderbilt.edu/~schmidt/ACE-copying.html"
+    }
+  ],
+  "required_sdk_notice": {
+    "sdk_name": "Facebook iOS SDK",
+    "copyright": "Copyright (c) 2014-present, Meta Platforms, Inc. All rights reserved."
+  },
+  "nodes": [
+    {
+      "id": "fb-product-ace-doc",
+      "name": "ACE TAO CIAO DAnCE CoSMIC",
+      "license": "Copyright 1993-2009 Douglas C. Schmidt et al., Washington University, UC Irvine, Vanderbilt University",
+      "type": "third-party",
+      "source": "Facebook mobile notices"
+    },
+    {
+      "id": "fb-product-android-sdk",
+      "name": "Android SDK",
+      "license": "Apache-2.0",
+      "type": "third-party",
+      "source": "facebook-android-sdk/NOTICE.txt"
+    },
+    {
+      "id": "fb-product-mixpanel",
+      "name": "Mixpanel",
+      "license": "Apache-2.0",
+      "type": "third-party",
+      "source": "facebook-android-sdk/NOTICE.txt"
+    },
+    {
+      "id": "apache-component-openxr-sdk",
+      "name": "OpenXR-SDK",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-starscream",
+      "name": "Starscream",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-wangle",
+      "name": "Wangle",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-yarpl",
+      "name": "Yarpl",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-abseil-cpp",
+      "name": "abseil-cpp",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-ejs",
+      "name": "ejs",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-flatbuffers",
+      "name": "flatbuffers",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-flatcc",
+      "name": "flatcc",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-folly",
+      "name": "folly",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-libphonenumber-ios",
+      "name": "libphonenumber-ios",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-mathjs",
+      "name": "mathjs",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-mbedtls",
+      "name": "mbedtls",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-msgpack-objectivec",
+      "name": "msgpack-objectivec",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-opencv-contrib",
+      "name": "opencv_contrib",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    },
+    {
+      "id": "apache-component-llvm-project",
+      "name": "llvm-project",
+      "license": "Apache-2.0",
+      "type": "third-party"
+    }
+  ]
+}

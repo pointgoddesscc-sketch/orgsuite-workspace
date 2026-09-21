@@ -1,0 +1,43 @@
+# Local supporting services for OrgSuite Meta + Grok workplace work.
+# Proposed / local-only. Does not create a Meta App or store secrets.
+# Usage: docker compose -f docker-compose.meta-workplace.yml up -d
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: orgsuite
+      POSTGRES_USER: orgsuite
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme_local_only}
+    ports:
+      - "5432:5432"
+    volumes:
+      - orgsuite_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U orgsuite"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - orgsuite_redis:/data
+
+  legal-static:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports:
+      - "8088:80"
+    volumes:
+      - ./legal/facebook-third-party-notices:/usr/share/nginx/html/legal/facebook-notices:ro
+      - ./legal/facebook-third-party-notices/nginx.legal.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  orgsuite_pg:
+  orgsuite_redis:

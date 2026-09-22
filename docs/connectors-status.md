@@ -6,27 +6,37 @@ Workplace source of truth. Host: GitHub `pointgoddesscc-sketch/orgsuite-workspac
 
 Official Grok surface: [grok.com](https://grok.com) / this Grok workspace. `grok.me` is not an xAI host used here.
 
-## Authorized connectors (this Grok workplace)
+Linear checklist twin: [OrgSuite Connector Rollout Checklist & Status](https://linear.app/pse-management/document/orgsuite-connector-rollout-checklist-and-status-2f33b168b2b9)
+
+## Sweep 2026-09-22 23:46 WAT (Linear + GitHub only)
+
+Owner asked to act with the two working pipes. Live identity: GitHub `pointgoddesscc-sketch`, Linear workspace PSE Management.
 
 | Connector | Status | Notes |
 |-----------|--------|-------|
-| Gmail | Connected | Live session identity `pointgoddesscc@gmail.com` (ORG SUITE). 527 messages / 421 threads verified 2026-09-14. Inbox also shows mail to `chrisemerson360agency@gmail.com` and `openaistudio@pse-sent.com`. |
-| Outlook | Connected | Mailbox `chrisemerson360agency@outlook.com`. Inbox 113 / 82 unread verified 2026-09-14. |
-| Google Calendar | Connected | Free/busy |
-| Google Drive (PIP) | Connected | ORG SUITE / `pointgoddesscc@gmail.com`. Quota 0.41 GB / 15 GB verified 2026-09-14. |
-| Google Drive (native MCP) | Requires Authorization | `search_files` returned Auth required. First-party Drive card not completed. |
-| OneDrive / Graph Files | Requires Authorization | Not in this Grok tool session. Outlook mail ≠ Files.ReadWrite.All. |
-| Calendly | Connected | Booking |
-| GitHub | Connected | `pointgoddesscc-sketch` |
-| Vercel | Connected | Team PSE SENT (`pse-sent`) |
-| Linear | Connected | PSE Management |
-| Notion | Connected | |
-| Figma | Connected | |
-| Canva | Connected | |
-| Stripe | Connected | |
-| Microsoft Teams | Connected | Graph mail/chat surface; reauth has failed in prior sweeps |
-| Gmail Contacts / People API | Not available | No connector |
-| Gemini | Not available | No connector in this workspace |
+| Linear | Connected | Workspace PSE Management, team PSE. 7 projects In Progress. 127 issues (38 started / 68 backlog / 18 todo / 23 done / 1 canceled). |
+| GitHub | Connected | `pointgoddesscc-sketch` (72 public repos). This file lives in `orgsuite-workspace`. |
+| Gmail | Connected | Prior verified; automations still active. |
+| Outlook | Connected | Prior verified; Outlook-to-Gmail automation active. |
+| Google Calendar | Connected | Prior verified. |
+| Google Drive (PIP) | Connected | Prior verified. |
+| Google Drive (native MCP) | Requires Authorization | First-party Drive card not completed. |
+| OneDrive / Graph Files | Requires Authorization | Outlook mail ≠ Files.ReadWrite.All. |
+| Calendly | Connected | Prior verified. |
+| Vercel | Connected | Team PSE SENT. GoDaddy MCP project still missing `GODADDY_PAT`. |
+| Notion | Connected | Prior verified. |
+| Figma | Connected | Prior verified. |
+| Canva | Connected | Prior verified. |
+| Stripe | Connected | Prior verified. |
+| Make | Connected | Prior verified. |
+| Cloudflare | Connected | Prior verified. |
+| Microsoft Teams | Requires Authorization | Prior Graph 401. |
+| GoDaddy public suggest/availability | Available | Official MCP search only. |
+| GoDaddy account DNS (`orgsuite-godaddy-mcp`) | Requires Authorization | Health `keys_missing` HTTP 503. Owner sets `GODADDY_PAT` on Vercel. See PSE-16. |
+| Twilio (PIP) | Requires Authorization | `Authentication Error - invalid username`. No SMS/call from this session. See PSE-128. |
+| GitLab (PIP) | Requires Authorization | Pipedream GitLab reconnect required. |
+| Telegram bot | Requires Authorization | No live Bot API getMe this session. Token stays in Vercel/Firebase. See PSE-87. |
+| Automations (Grok) | Connected | Multiple Gmail/Outlook jobs active. Broken layer is vendor keys, not the jobs. |
 
 ## Cloud storage mount (PSE-100)
 
@@ -45,21 +55,17 @@ Refresh tokens belong in the Workplace Vault only.
 |-------------------|--------|-------|
 | `30aa800b8c51400883f9307e174501f1@domainsbyproxy.com` | Connected as inbound forward | `donotreply@domainsbyproxy.com` → `chrisemerson360agency@gmail.com` (verified 2026-09-01) |
 | `2dee023ea92f4d5ea44412520ce6ec9a@domainsbyproxy.com` | Documented | psemanagement.services privacy alias (see `docs/godaddy-secure-integration.md`) |
-| GoDaddy Conversations `kidrockmananagement.com` | Workspace verified via Gmail notifications | Not a Conversations admin API |
-| Canary Mail | Client only | Syncs the Gmail mailbox. No Canary team API. Ticket delete stays in the Canary app. |
-| Canary Mail Copilot | Not available via API | |
+| GoDaddy Conversations | Workspace verified via Gmail notifications | Not a Conversations admin API |
+| Canary Mail | Client only | Syncs the Gmail mailbox. No Canary team API. |
 | Proton Mail / Proton Pass | Not connected | Documented only |
-| SimpleLogin hosted API | Not connected | Self-host docs only |
 | Meta / ChatGPT / OpenAI account login | Not connected | Mail wrappers ≠ session |
-| Domains By Proxy control panel | Requires Authorization | Owner signs in at the registrar |
 
 ## Hosting we own
 
 - GitHub workspace: https://github.com/pointgoddesscc-sketch/orgsuite-workspace
-- License nodes: https://github.com/pointgoddesscc-sketch/orgsuite-canary-ios-acknowledgements
-- Vercel acknowledgements project: https://orgsuite-canary-acknowledgements.vercel.app
+- Linear workspace: https://linear.app/pse-management
+- Destination project: Add WhatsApp Business / Meta AI as Orgsuite destination
 - Vercel team: PSE SENT — no catch-all login proxy deployed
-- Cloud Storage workplace page: `cloud-storage/` (not claimed live on Vercel)
 
 ## What this workplace page is not
 
@@ -68,7 +74,8 @@ Refresh tokens belong in the Workplace Vault only.
 - Not a Gemini or grok.me host
 - Not proof that every address in Gmail has an API
 - Not a live OneDrive file system
+- Not a live Twilio call or GoDaddy DNS write
 
 Owner next steps stay official: authorize each vendor in its own product, then we mark that row Connected.
 
-**Last updated:** 2026-09-14
+**Last updated:** 2026-09-22 23:46 WAT

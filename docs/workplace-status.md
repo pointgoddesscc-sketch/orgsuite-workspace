@@ -1,8 +1,9 @@
 # OrgSuite Workplace Status
 
-**Last updated:** 2026-09-14  
+**Last updated:** 2026-09-22 23:55 WAT  
 **Primary hub:** [orgsuite-workspace](https://github.com/pointgoddesscc-sketch/orgsuite-workspace)  
-**Linear project:** [OrgSuite Codex App](https://linear.app/pse-management/project/orgsuite-codex-app-9146b449b7a1)
+**Linear project:** [OrgSuite Codex App](https://linear.app/pse-management/project/orgsuite-codex-app-9146b449b7a1)  
+**Destination project:** [Add WhatsApp Business / Meta AI as Orgsuite destination](https://linear.app/pse-management/project/add-whatsapp-business-meta-ai-as-orgsuite-destination-343283c7be02)
 
 ---
 
@@ -17,8 +18,12 @@ OrgSuite
 │   ├── MCP Gateway + OAuth 2.1           🔄 In Progress (PSE-86)
 │   └── Connector Registry                🔄 Live, hardening open
 ├── Connectors
-│   ├── Meta                              ✅ Done (PSE-99)
-│   ├── Google + Microsoft cloud storage  ✅ Done (PSE-100)
+│   ├── Linear + GitHub                   ✅ Connected (this session)
+│   ├── Meta                              ✅ Code done (PSE-99); Page login still owner
+│   ├── Google + Microsoft cloud storage  ✅ Docs done (PSE-100); native Drive/OneDrive owner
+│   ├── GoDaddy account DNS               ⏳ Requires Authorization (PSE-16)
+│   ├── Twilio PIP                        ⏳ Requires Authorization (PSE-128)
+│   ├── GitLab PIP                        ⏳ Requires Authorization
 │   ├── Firebase                          ⏳ Requires Authorization (PSE-102)
 │   ├── Apple / ASC MCP                   ⏳ Requires Authorization (PSE-73)
 │   ├── Telegram MCP                      ⏳ Requires Authorization (PSE-87)
@@ -27,6 +32,7 @@ OrgSuite
 │   ├── Codex / Workplace app             ✅ Live
 │   └── Cloud Storage / Mail Host pages   ✅ Present
 └── Feature Products
+    ├── WhatsApp / Meta as destination    🔄 In Progress / atRisk
     ├── PSE Bank demo                     🔄 In Progress (PSE-93)
     ├── Calendar + Siri                   📋 Backlog
     └── Radio / Podcast / News            📋 Backlog
@@ -45,50 +51,44 @@ OrgSuite
 | Cloudflare edge host (`host.pse-sent.com`) | In Progress | PSE-97 |
 | Vercel domain attach | Requires Authorization | PSE-82 |
 
-Live probes (2026-09-14):
-- `pse-sent-workplace.vercel.app` → 200, health ok
-- `dash.pse-sent.com` → 200
-- `mcp.pse-sent.com/api/health` → ready:false (Telegram env missing)
-- ASC MCP host → Completed; Apple API Requires Authorization
-
 ---
 
-## Connectors — honest status
+## Connectors — honest status (2026-09-22 session)
 
 | Connector | Status | Blocker |
 |-----------|--------|---------|
-| Meta | **Completed** | — |
-| Google + Microsoft cloud | **Completed** | Native Drive MCP still optional |
-| Gmail / Outlook / Calendar / Linear / GitHub / Vercel / Notion / Canva / Stripe | **Connected** | — |
-| Firebase | **Requires Authorization** | Owner must set `FIREBASE_*` on Vercel `pse-sent-workplace` |
-| ASC MCP | **Requires Authorization** | Owner must set App Store Connect Issuer ID / Key ID / .p8 |
-| Telegram MCP | **Requires Authorization** | Owner must set Telegram + KV + OAuth env on `pse-sent-telegram-mcp` |
-| Apple Account bind | **Requires Authorization** | Accept iCloud T&Cs on device + Developer keys |
-| Proton MX | **Requires Authorization** | Owner must add domain + addresses in Proton first |
+| Linear | **Connected** | — |
+| GitHub | **Connected** | — |
+| Gmail / Outlook / Calendar / Vercel / Notion / Canva / Stripe / Make / Cloudflare | **Connected** | Prior probes; automations still active |
+| GoDaddy public suggest | **Available** | Search only |
+| GoDaddy account DNS | **Requires Authorization** | Set `GODADDY_PAT` on Vercel `orgsuite-godaddy-mcp` |
+| Twilio PIP | **Requires Authorization** | Invalid username |
+| GitLab PIP | **Requires Authorization** | Pipedream reconnect |
+| Telegram MCP | **Requires Authorization** | Token + KV on Vercel |
+| Firebase | **Requires Authorization** | `FIREBASE_*` on `pse-sent-workplace` |
+| ASC MCP | **Requires Authorization** | App Store Connect keys |
+| Microsoft Teams | **Requires Authorization** | Graph 401 |
+| Native Drive / OneDrive | **Requires Authorization** | Owner Grok cards |
+
+Full matrix: [`docs/connectors-status.md`](connectors-status.md)
 
 ---
 
 ## Owner actions required (cannot be done from Grok)
 
 ### High priority
-1. **PSE-102 Firebase** — Vercel project `pse-sent-workplace` → Production env → paste `FIREBASE_*` service account vars → redeploy → confirm `/api/firebase/health` shows connected.
-2. **PSE-73 ASC MCP** — Vercel project `orgsuite-asc-mcp` → set `APP_STORE_CONNECT_ISSUER_ID`, `APP_STORE_CONNECT_KEY_ID`, `APP_STORE_CONNECT_PRIVATE_KEY` → redeploy → paste MCP URL into Grok Custom Connector.
-3. **PSE-87 Telegram MCP** — Vercel project `pse-sent-telegram-mcp` → set Telegram API ID/Hash, session encryption, cookie secret, KV, OAuth issuer/audience → redeploy until health `ready: true`.
-4. **PSE-46** — Rotate the exposed Cloudflare Realtime secret (critical).
+1. **PSE-16 GoDaddy** — Vercel `orgsuite-godaddy-mcp` → Production env → `GODADDY_PAT` → redeploy → health ok:true.
+2. **PSE-128 Twilio** — Reconnect Twilio inside Pipedream. Do not paste SID/token in chat.
+3. **GitLab PIP** — Reconnect GitLab in Pipedream.
+4. **PSE-46** — Rotate the exposed Cloudflare Realtime secret.
+5. **PSE-102 Firebase** — `FIREBASE_*` on `pse-sent-workplace` → redeploy → `/api/firebase/health` connected.
+6. **PSE-87 Telegram MCP** — Telegram + KV + OAuth env until health `ready: true`.
 
 ### Medium priority
-5. **PSE-96 Proton** — Add `pse-sent.com` in Proton Mail domain settings, create addresses, then allow MX cutover.
-6. **PSE-101 Apple** — Accept pending iCloud Terms on the signed-in iPhone.
-7. **PSE-82** — Attach `pse-sent.com` in Vercel Domains (owner UI).
-
----
-
-## Recommended next execution order
-
-1. Owner clears the high-priority Requires Authorization items above.
-2. Finish PSE-86 OAuth hardening (jwtMode off preview-fallback).
-3. Close PSE-97 edge host if still needed.
-4. Only then advance feature surfaces (Bank, Calendar, Radio).
+7. **PSE-73 ASC MCP** — App Store Connect Issuer / Key / .p8 on `orgsuite-asc-mcp`.
+8. **PSE-96 Proton** — Add domain + addresses, then MX cutover.
+9. **PSE-101 Apple** — Accept pending iCloud Terms on device.
+10. **PSE-82** — Attach domain in Vercel UI.
 
 ---
 

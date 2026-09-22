@@ -20,7 +20,9 @@ It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, s
 
 ---
 
-## Current Status — 2026-09-14
+## Current Status — 2026-09-22
+
+This date is a **docs closeout on `main`** from a Linear + GitHub session. Vendor secrets were not written.
 
 ### Tier 1 — Production Core (priority)
 
@@ -28,22 +30,25 @@ It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, s
 |------|--------|--------|
 | pse-sent.com Cloudflare zone + DNS | **Done** | PSE-81 |
 | Production AI Workplace (OAuth 2.1 + MCP gateway + connector registry) | In Progress | PSE-86 |
-| Secured Workplace (identity, secrets, least privilege, audit) | In Review | PSE-77 |
-| Cloudflare dashboard (`dash.pse-sent.com`) | In Progress | PSE-98 |
+| Secured Workplace (identity, secrets, least privilege, audit) | Done | PSE-77 |
+| Cloudflare dashboard (`dash.pse-sent.com`) | Done | PSE-98 |
 | Cloudflare edge host (`host.pse-sent.com`) | In Progress | PSE-97 |
 
-### Tier 2 — Connectors (active this week)
+### Tier 2 — Connectors (this session)
 
 | Connector | Status | Linear |
 |-----------|--------|--------|
-| Meta (Facebook / Messenger / Business Suite / AI Router) | **Done** | PSE-99 |
-| Google + Microsoft cloud storage mount (Drive / OneDrive) | **Done** | PSE-100 |
-| Firebase workplace connector | In Progress | PSE-102 |
-| ASC MCP (App Store Connect) | In Progress | PSE-73 |
-| SimpleLogin MCP | In Progress | PSE-83 |
+| Linear + GitHub | **Connected** | live this session |
+| Meta (Facebook / Messenger / Business Suite / AI Router) | Code Done / login owner | PSE-99 |
+| Google + Microsoft cloud storage mount | Docs Done / native owner | PSE-100 |
+| GoDaddy account DNS | Requires Authorization | PSE-16 |
+| Twilio PIP | Requires Authorization | PSE-128 |
+| Firebase workplace connector | Requires Authorization | PSE-102 |
+| ASC MCP (App Store Connect) | Requires Authorization | PSE-73 |
 | Official Meta MCP servers → Grok | In Progress | PSE-95 |
-| Apple Account workplace bind | In Progress | PSE-101 |
-| Telegram MCP arming | In Progress | PSE-87 |
+| Apple Account workplace bind | Requires Authorization | PSE-101 |
+| Telegram MCP arming | Requires Authorization | PSE-87 |
+| WhatsApp / Meta as OrgSuite destination | In Progress / atRisk | destination project |
 
 ### Tier 3 — Features & Surfaces
 
@@ -56,14 +61,15 @@ It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, s
 | Public findability | In Progress | PSE-69 |
 
 Full connector matrix: [`docs/connectors-status.md`](docs/connectors-status.md)  
+Workplace status: [`docs/workplace-status.md`](docs/workplace-status.md)  
 Full repository index: [`docs/workplace-index.md`](docs/workplace-index.md)
 
 ---
 
 ## Recommended Daily Order of Work
 
-1. **Security & production core** (PSE-77, PSE-86, PSE-46 if still open)
-2. **Active connectors** that unblock other work (Firebase, ASC MCP, Telegram MCP, Cloudflare surfaces)
+1. **Owner keys** (GoDaddy PAT, Twilio PIP, GitLab PIP, PSE-46 secret rotate)
+2. **Security & production core** (PSE-86, Firebase, Telegram MCP)
 3. **Mail & identity** (PSE-96 Proton MX, Apple bind)
 4. **Feature surfaces** (Bank, Calendar, Radio)
 5. **Backlog / polish**
@@ -86,7 +92,7 @@ Full repository index: [`docs/workplace-index.md`](docs/workplace-index.md)
 
 - This repository is the designated primary hub.
 - Follow `AGENTS.md` and everything under `docs/`.
-- Prefer feature branches + Pull Requests.
+- Prefer feature branches + Pull Requests for code. Docs closeouts may land on `main` when the owner says so.
 - Never invent live connectors, credentials, or remote browser control.
 - Status labels: **Completed / Connected / Available / Ready to Configure / Proposed / Requires Authorization**.
 
@@ -98,6 +104,7 @@ Full repository index: [`docs/workplace-index.md`](docs/workplace-index.md)
 |----------|---------|
 | [`AGENTS.md`](AGENTS.md) | Rules for Codex, Grok, and any agent |
 | [`docs/connectors-status.md`](docs/connectors-status.md) | Live connector matrix (source of truth) |
+| [`docs/workplace-status.md`](docs/workplace-status.md) | Hierarchy + owner actions |
 | [`docs/workplace-index.md`](docs/workplace-index.md) | Repository map |
 | [`docs/cloud-connectors.md`](docs/cloud-connectors.md) | Cloud storage architecture |
 | [`docs/secure-mail-proton-simplelogin.md`](docs/secure-mail-proton-simplelogin.md) | Mail aliases |

@@ -6,21 +6,21 @@ Checklist: https://linear.app/pse-management/document/orgsuite-connector-rollout
 
 GitHub: https://github.com/pointgoddesscc-sketch/orgsuite-workspace
 
-## Live surfaces
+## Live surfaces (ours)
 
-- Grok Forge (xAI product): https://workwithbot.grok.me/
+- Primary domain: https://pse-sent.com
 - Vercel console (PSE SENT): https://orgsuite-make-bot-work.vercel.app
-- Existing workplace bots: https://orgsuite-workplace-bots.vercel.app
+- Workplace bots: https://orgsuite-workplace-bots.vercel.app
 - Command Center: https://orgsuite-command-center.vercel.app
+- Codex Command Center: https://orgsuite-codex-command-center.vercel.app
 
-`workwithbot.grok.me` is an xAI-hosted Forge login. It cannot be attached as a Vercel custom domain. The workplace console is the Vercel project; Forge remains the bot builder.
+`*.grok.me` pages are not OrgSuite hosts. Do not list them as workplace URLs.
+Grok chat login stays on the vendor site https://grok.com — that is not a pse-sent property.
 
-## Verified 2026-09-09 20:10 WAT
+## Verified 2026-09-23 04:16 WAT
 
-Connected: Linear, GitHub, Vercel (PSE SENT), Gmail, Google Calendar, Google Drive (PIP), Outlook.
+Connected this session: Linear, GitHub, Gmail, Outlook.
 
-Requires owner OAuth tap in Grok: Google Contacts, Google Chat.
-
-PR #10 is merged. Follow-up branch `pse-80-public-console` records the public console.
+Owner asked to remove grok.me from workplace paper and keep pse-sent.com / PSE SENT Vercel as the public surfaces.
 
 The local engine does not inherit Grok OAuth tokens. Host env + official OAuth apps are still required for the engine process to call Google APIs itself.

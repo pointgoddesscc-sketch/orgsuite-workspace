@@ -4,7 +4,26 @@
 
 It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, secure domain operations, and device workflows into one command center.
 
-## Live Surfaces
+## Connector Hub and workplace operations — 2026-10-18
+
+The internal [Connector Hub](orgsuite-connector-hub/README.md) adds real provider
+tests, selected Google Drive file operations, recent activity, an audit trail,
+and an authenticated Workplace Status page. It requires a persistent Node.js
+24+ host, private encrypted storage, and separate official provider authorization;
+chat connector access does not authorize the deployed application.
+
+The [inquiry contract](docs/inquiry-contract.md) requires durable server
+acceptance before a receipt appears. Its current production behavior remains
+unverified. Review the [ecosystem map](docs/ecosystem.md),
+[Hub security model](docs/connector-hub-security.md), and
+[ads readiness](docs/ads-readiness.md) for deployment boundaries and remaining
+owner actions. No Hub deployment, new live connection, campaign launch, or ad
+spend is claimed by this implementation. Changes require human review and merge.
+
+## Recorded surface inventory
+
+These are existing repository references; current health has not been verified
+by this inventory. The Hub has no assigned production URL in this change.
 
 | Surface | URL |
 |---------|-----|
@@ -20,9 +39,9 @@ It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, s
 
 ---
 
-## Current Status — 2026-09-22
+## Historical status — 2026-09-22
 
-This date is a **docs closeout on `main`** from a Linear + GitHub session. Vendor secrets were not written.
+This date is a **docs closeout on `main`** from a Linear + GitHub session. Vendor secrets were not written. The following tables preserve that session's history and do not establish current connector authorization or production health.
 
 ### Tier 1 — Production Core (priority)
 
@@ -103,6 +122,11 @@ Full repository index: [`docs/workplace-index.md`](docs/workplace-index.md)
 | Document | Purpose |
 |----------|---------|
 | [`AGENTS.md`](AGENTS.md) | Rules for Codex, Grok, and any agent |
+| [`docs/ecosystem.md`](docs/ecosystem.md) | Components, navigation, hosting inventory, and current implementation boundaries |
+| [`orgsuite-connector-hub/README.md`](orgsuite-connector-hub/README.md) | Internal dashboard, selected Drive operations, setup, and deployment |
+| [`docs/connector-hub-security.md`](docs/connector-hub-security.md) | Exact scopes, credential storage, session model, and operational controls |
+| [`docs/inquiry-contract.md`](docs/inquiry-contract.md) | Validated inquiry acceptance and production verification steps |
+| [`docs/ads-readiness.md`](docs/ads-readiness.md) | Remaining external account, policy, checkout, and launch steps; no spend |
 | [`docs/connectors-status.md`](docs/connectors-status.md) | Live connector matrix (source of truth) |
 | [`docs/workplace-status.md`](docs/workplace-status.md) | Hierarchy + owner actions |
 | [`docs/workplace-index.md`](docs/workplace-index.md) | Repository map |

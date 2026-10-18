@@ -1,0 +1,9 @@
+{
+  "name": "orgsuite-connector-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Internal OrgSuite connector status, scoped Drive operations, and durable inquiry intake",
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node src/server.mjs", "test": "node test/run.mjs" }
+}

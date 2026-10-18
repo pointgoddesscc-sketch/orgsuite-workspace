@@ -1,0 +1,32 @@
+name: Workplace Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Connector Hub security and integration checks
+        run: node orgsuite-connector-hub/test/run.mjs
+
+      - name: Inquiry acceptance and browser regression checks
+        run: |
+          node psemanagement-services/tests/inquiry-api.test.cjs
+          node psemanagement-services/tests/inquiry-submission.test.cjs
+
+      - name: Check browser JavaScript syntax
+        run: node --check orgsuite-connector-hub/public/app.js

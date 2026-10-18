@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b30">
+  <meta name="description" content="Internal OrgSuite connector management, selected Google Drive files, and workplace service health.">
+  <title>Connector Hub · OrgSuite</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside class="sidebar" aria-label="Workplace navigation">
+    <a class="brand" href="/" aria-label="OrgSuite Connector Hub home"><span class="brand-mark" aria-hidden="true">O<span>↗</span></span><span>OrgSuite<small>PSE MANAGEMENT</small></span></a>
+    <div class="nav-label">WORKPLACE</div>
+    <nav><a class="nav-link active" href="/" aria-current="page"><span aria-hidden="true">▦</span> Connector Hub</a><a class="nav-link" href="/status"><span aria-hidden="true">◉</span> Workplace Status</a><a class="nav-link" href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace/blob/main/docs/ecosystem.md" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span> Ecosystem guide</a></nav>
+    <div class="sidebar-note"><span class="internal-label">INTERNAL WORKSPACE</span><p>Authorized services.<br>Clear connection status.<br>One place to work.</p><a href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace" target="_blank" rel="noopener noreferrer">Open repository ↗</a></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div><span class="breadcrumb">OrgSuite</span><span class="breadcrumb-divider" aria-hidden="true">/</span><span>Connector Hub</span></div><div class="session-tools"><span class="session-actor" id="session-actor">Verifying session…</span><button class="text-button" id="logout" type="button" disabled>Sign out</button></div></header>
+    <main id="main">
+      <div class="page-heading"><div><p class="eyebrow">WORKPLACE OPERATIONS</p><h1>Your connections, in view.</h1><p class="page-description">Manage authorized services and selected project files across the OrgSuite workplace.</p></div><button class="button primary" id="refresh-all" type="button" disabled><span aria-hidden="true">↻</span> Refresh status</button></div>
+      <div id="global-message" class="message" role="status" aria-live="polite" hidden></div>
+      <div class="no-spend"><span class="no-spend-icon" aria-hidden="true">◈</span><div><strong>Advertising is in preparation.</strong><span> No campaigns or spend can be created here. The authorized ceiling is <b>US$100 total</b>; external authorization and launch checks are still required.</span></div><a href="#readiness">View requirements ↓</a></div>
+      <section class="overview-grid" aria-label="Connection overview"><div class="overview-card"><span class="overview-label">Connected services</span><strong id="connected-count">—</strong><span class="muted">Reported by authorized APIs</span></div><div class="overview-card"><span class="overview-label">Needs attention</span><strong id="attention-count">—</strong><span class="muted">Setup, authorization, or errors</span></div><div class="overview-card"><span class="overview-label">Last refreshed</span><strong class="time-value" id="last-refreshed">Not yet checked</strong><span class="muted">This session only</span></div></section>
+      <section aria-labelledby="connections-heading"><div class="section-heading"><div><h2 id="connections-heading">Workplace connectors</h2><p>Connections are verified by the Hub server. Workplace app access does not automatically authorize this application.</p></div><span class="section-meta">OFFICIAL PROVIDER APIS</span></div><div id="connectors" class="connector-grid" aria-live="polite"><p class="empty-state">Loading connector status…</p></div></section>
+      <section class="panel drive-panel" aria-labelledby="drive-heading"><div class="panel-heading"><div><p class="eyebrow">PROJECT FILES</p><h2 id="drive-heading">Google Drive</h2><p>Browse approved roots, search files, and create project folders with inherited access.</p></div><span class="subtle-tag">SELECTED FOLDERS ONLY</span></div><p id="drive-message" class="inline-message" role="status" aria-live="polite">Loading approved Drive folders…</p>
+        <form id="drive-search" class="drive-toolbar"><div class="field"><label for="drive-root">Approved root</label><select id="drive-root" required disabled><option value="">Choose an approved folder</option></select></div><div class="field search-field"><label for="drive-query">Search in this folder</label><input id="drive-query" name="query" type="search" maxlength="200" placeholder="Search file names" disabled></div><button class="button secondary" type="submit" disabled>Search files</button></form>
+        <div class="folder-path" id="folder-path" aria-label="Current Drive folder"></div>
+        <div class="table-wrap"><table class="data-table"><caption class="sr-only">Files in the selected Google Drive folder</caption><thead><tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Modified</th><th scope="col">Actions</th></tr></thead><tbody id="drive-files"><tr><td colspan="4" class="empty-state">Connect Google Drive and choose an approved root to view files.</td></tr></tbody></table></div>
+        <button id="drive-more" class="button secondary load-more" type="button" hidden>Load more files</button>
+        <div class="drive-actions"><form id="drive-create" class="drive-action-form"><label for="folder-name">Create a project folder</label><p>Access is inherited from the selected parent. No public sharing is created.</p><div class="input-action"><input id="folder-name" type="text" maxlength="120" placeholder="Project folder name" required disabled><button class="button secondary" type="submit" disabled>Create folder</button></div></form><form id="drive-upload" class="drive-action-form"><label for="upload-file">Upload an approved file</label><p>PDF, text, CSV, JSON, PNG, JPEG, WebP, DOCX, XLSX, or PPTX. Maximum 5 MiB.</p><div class="input-action"><input id="upload-file" type="file" accept=".pdf,.txt,.csv,.json,.png,.jpg,.jpeg,.webp,.docx,.xlsx,.pptx" required disabled><button class="button secondary" type="submit" disabled>Upload file</button></div></form></div>
+      </section>
+      <div class="lower-grid"><section class="panel" aria-labelledby="activity-heading"><div class="panel-heading"><div><p class="eyebrow">ACCOUNTABILITY</p><h2 id="activity-heading">Connection activity</h2></div><button class="text-button" id="refresh-audit" type="button" disabled>Refresh</button></div><p class="muted small">Connection events include the actor, outcome, and time. File contents and credentials are never shown.</p><div class="table-wrap"><table class="data-table"><caption class="sr-only">Recent audited connection events</caption><thead><tr><th scope="col">Event / actor</th><th scope="col">Outcome</th><th scope="col">Time</th></tr></thead><tbody id="audit-events"><tr><td colspan="3" class="empty-state">Loading audited events…</td></tr></tbody></table></div></section>
+      <section class="panel readiness-panel" id="readiness" aria-labelledby="readiness-heading"><p class="eyebrow">ADS &amp; TRACKING</p><h2 id="readiness-heading">Prepare before publishing.</h2><p class="muted">This Hub supports connection and reporting readiness. A human must complete the remaining external steps before any launch.</p><ul class="readiness-list"><li>Authorize the correct Google Ads account and resolve prior disapproval.</li><li>Authorize Meta / Facebook with access to the intended ad account.</li><li>Verify GoDaddy ownership, DNS, and the intended production destination.</li><li>Verify checkout, inquiry delivery, consent, and conversion tracking.</li><li>Confirm the product, USA targeting, and the US$100 total ceiling.</li></ul><a class="document-link" href="https://github.com/pointgoddesscc-sketch/orgsuite-workspace/blob/main/docs/ads-readiness.md" target="_blank" rel="noopener noreferrer">Read the launch requirements ↗</a></section></div>
+      <footer class="page-footer"><span>OrgSuite · PSE Management</span><span>Internal operations · No advertising spend</span></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript">Enable JavaScript to inspect authenticated connector status and manage approved files.</p></noscript>
+</body>
+</html>

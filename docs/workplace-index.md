@@ -9,6 +9,18 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 
 ## Core Hub (start here)
 
+[Ecosystem map](ecosystem.md) ·
+[Connector Hub setup](../orgsuite-connector-hub/README.md) ·
+[Security and scopes](connector-hub-security.md) ·
+[Inquiry contract](inquiry-contract.md) ·
+[Advertising readiness](ads-readiness.md)
+
+The October 17–18, 2026 implementation adds `orgsuite-connector-hub/`, an internal
+Node.js application with provider tests, selected Drive file operations, a
+`/status` page, audit events, and durable encrypted inquiry intake. Deployment,
+host secrets, and actual provider grants remain separate steps. No live
+connection is inferred from code or older chat sessions.
+
 | Repository | Purpose |
 |------------|---------|
 | **orgsuite-workspace** | Main professional hub for Working Copy + ChatGPT Codex |
@@ -17,12 +29,17 @@ Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
 
 ## Cloud storage (PSE-100)
 
+Operational Google Drive integration now lives in the
+[Connector Hub](../orgsuite-connector-hub/README.md). The following older rows
+record the September 14, 2026 session and static UI, not current Hub
+authorization. Microsoft/OneDrive remains outside the new Hub implementation.
+
 | Surface | Status | Path |
 |---------|--------|------|
 | Connector architecture | Completed (docs) | `docs/cloud-connectors.md` |
 | Cloud Storage workplace page | Completed (static) | `cloud-storage/` |
-| Gmail + Outlook mail | Connected | Live Grok connectors |
-| Google Drive (PIP) | Connected | Live PIP Drive identity ORG SUITE |
+| Gmail + Outlook mail | Historical Connected snapshot | Grok session, 2026-09-14 |
+| Google Drive (PIP) | Historical Connected snapshot | PIP Drive identity ORG SUITE, 2026-09-14 |
 | Native Drive MCP + OneDrive | Requires Authorization | Owner Grok connector cards |
 
 ## Chat UI Prototype

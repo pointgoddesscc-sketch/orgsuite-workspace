@@ -4,7 +4,11 @@
 
 It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, secure domain operations, and device workflows into one command center.
 
-## Live Surfaces
+## Verification update — 2026-10-19 UTC
+
+GitHub repository reads succeeded in this review. Other provider connections and public-host availability remain unverified in this session. September statuses below are historical, not current health evidence. See [canonical hosts](docs/canonical-hosts.md) and [alignment handoff](docs/workplace-alignment-2026-10-19.md) for proposed actions and remaining checks.
+
+## Documented Surfaces
 
 | Surface | URL |
 |---------|-----|
@@ -20,7 +24,7 @@ It connects multi-AI work (Grok, ChatGPT/Codex, Copilot), official connectors, s
 
 ---
 
-## Current Status — 2026-09-22
+## Historical Status — 2026-09-22
 
 This date is a **docs closeout on `main`** from a Linear + GitHub session. Vendor secrets were not written.
 
@@ -34,7 +38,7 @@ This date is a **docs closeout on `main`** from a Linear + GitHub session. Vendo
 | Cloudflare dashboard (`dash.pse-sent.com`) | Done | PSE-98 |
 | Cloudflare edge host (`host.pse-sent.com`) | In Progress | PSE-97 |
 
-### Tier 2 — Connectors (this session)
+### Tier 2 — Connectors (September 2026 session)
 
 | Connector | Status | Linear |
 |-----------|--------|--------|

@@ -1,5 +1,7 @@
 # OrgSuite Workplace Status
 
+> Verification update, 2026-10-19 UTC: the September statuses below are historical. They do not establish current provider access. GitHub repository reads succeeded in this review; other integrations remain unverified. See [alignment handoff](workplace-alignment-2026-10-19.md).
+
 **Last updated:** 2026-09-22 23:55 WAT  
 **Primary hub:** [orgsuite-workspace](https://github.com/pointgoddesscc-sketch/orgsuite-workspace)  
 **Linear project:** [OrgSuite Codex App](https://linear.app/pse-management/project/orgsuite-codex-app-9146b449b7a1)  

@@ -1,5 +1,7 @@
 # Connectors Status – OrgSuite Workspace
 
+> Verification update, 2026-10-19 UTC: the September statuses below are historical. They do not establish current provider access. GitHub repository reads succeeded in this review; other integrations remain unverified. See [alignment handoff](workplace-alignment-2026-10-19.md).
+
 Workplace source of truth. Host: GitHub `pointgoddesscc-sketch/orgsuite-workspace` (PSE SENT Vercel team for linked projects).
 
 **Rule:** Status is Connected only when an official connector or verified forward exists. Saying “it is ours” does not create a vendor API session.

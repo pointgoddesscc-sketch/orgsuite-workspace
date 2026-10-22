@@ -1,61 +1,42 @@
 # Connectors Status – OrgSuite Workspace
 
-Workplace source of truth. Host: GitHub `pointgoddesscc-sketch/orgsuite-workspace` (PSE SENT Vercel team for linked projects).
+Workplace source of truth. Host: GitHub `pointgoddesscc-sketch/orgsuite-workspace`.
 
-**Rule:** Status is Connected only when an official connector or verified forward exists. Saying “it is ours” does not create a vendor API session.
+**Rule:** Status is Connected only when an official connector or verified forward exists.
 
-Official Grok **chat** login: [grok.com](https://grok.com). That is vendor. Workplace public URLs are **pse-sent.com** and PSE SENT Vercel. `grok.me` is not an OrgSuite host.
-
-Linear checklist twin: [OrgSuite Connector Rollout Checklist & Status](https://linear.app/pse-management/document/orgsuite-connector-rollout-checklist-and-status-2f33b168b2b9)
-
-Canonical host list: [`docs/canonical-hosts.md`](canonical-hosts.md)
-
-## Sweep 2026-09-23 04:16 WAT
-
-Owner asked to remove grok.me from workplace paper. Live identity: GitHub `pointgoddesscc-sketch`, Linear workspace PSE Management.
+## Sweep 2026-10-22
 
 | Connector | Status | Notes |
 |-----------|--------|-------|
 | Linear | Connected | Workspace PSE Management |
-| GitHub | Connected | `pointgoddesscc-sketch` (72 public repos). |
-| Gmail | Connected | Verified this week |
-| Outlook | Connected | Verified this week |
+| GitHub | Connected | `pointgoddesscc-sketch` |
+| Gmail | Connected | chrisemerson360agency@gmail.com, alonejamesowns@gmail.com, pointgoddesscc@gmail.com |
+| Outlook | Connected | Prior verified |
 | Google Calendar | Connected | Prior verified |
 | Google Drive (PIP) | Connected | Prior verified |
-| Google Drive (native MCP) | Requires Authorization | First-party Drive card not completed |
-| OneDrive / Graph Files | Requires Authorization | Outlook mail ≠ Files.ReadWrite.All |
-| Calendly | Connected | Prior verified |
-| Vercel | Connected | Team PSE SENT. GoDaddy MCP still missing `GODADDY_PAT` |
+| Vercel | Connected | Team PSE SENT; KR Management domain live |
 | Notion | Connected | Prior verified |
-| Figma | Connected | Prior verified |
 | Canva | Connected | Prior verified |
 | Stripe | Connected | Prior verified |
 | Make | Connected | Prior verified |
 | Cloudflare | Connected | Prior verified |
-| Microsoft Teams | Requires Authorization | Prior Graph 401 |
-| GoDaddy public suggest/availability | Available | Official MCP search only |
-| GoDaddy account DNS (`orgsuite-godaddy-mcp`) | Requires Authorization | Health `keys_missing` |
+| Support mail forward | Connected | support@kidrockmanagementteamsent.com → chrisemerson360agency@gmail.com |
+| Canary Mail (client) | Ready to Configure | Device app; add the three Gmail accounts |
+| GoDaddy account DNS | Requires Authorization | GODADDY_PAT missing |
 | Twilio (PIP) | Requires Authorization | invalid username |
-| GitLab (PIP) | Requires Authorization | Pipedream reconnect |
 | Telegram bot | Requires Authorization | See PSE-87 |
-| Automations (Grok) | Connected | Jobs exist; vendor keys still the break |
-| Google Contacts | Requires Authorization | Auth card unavailable this session |
+| Firebase | Requires Authorization | FIREBASE_* env |
+| ASC MCP | Requires Authorization | App Store Connect keys |
+| Native Drive / OneDrive | Requires Authorization | Owner connector cards |
 
 ## Hosting we own
 
 - https://pse-sent.com
+- https://kidrockmanagementteamsent.com
 - https://mcp.pse-sent.com/api/mcp
 - https://dash.pse-sent.com
-- https://host.pse-sent.com
 - https://github.com/pointgoddesscc-sketch/orgsuite-workspace
 - https://linear.app/pse-management
-- Vercel team PSE SENT (`orgsuite-*-vercel.app` projects)
+- Vercel team PSE SENT
 
-## What this workplace page is not
-
-- Not a password vault
-- Not owner of grok.me / grok.com
-- Not a live GoDaddy DNS write until PAT exists
-- Not a live Twilio call
-
-**Last updated:** 2026-09-23 04:16 WAT
+**Last updated:** 2026-10-22 04:00 WAT

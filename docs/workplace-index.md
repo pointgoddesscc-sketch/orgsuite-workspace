@@ -1,98 +1,51 @@
 # Workplace Index – OrgSuite / Point Goddess CC
 
 Primary hub: **orgsuite-workspace**  
-Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`
+Account: `pointgoddesscc-sketch` · Email: `pointgoddesscc@gmail.com`  
+**Last organized:** 2026-10-22
 
-## AI control plane
+## Identity & Mail
 
-**ChatGPT Codex** is authorized to operate on this repository under the workplace rules, including the `AGENTS.md` and `docs/` guidance, with a branch-based, PR-first workflow for real changes.
+| Role | Address |
+|------|---------|
+| Primary / GitHub | pointgoddesscc@gmail.com |
+| Agent Chris Emerson | chrisemerson360agency@gmail.com |
+| Secondary | alonejamesowns@gmail.com |
+| KR Management support | support@kidrockmanagementteamsent.com → Chris Emerson |
 
-## Core Hub (start here)
+Canary Mail: add the three Gmail accounts on device. Full steps in README.
 
-| Repository | Purpose |
-|------------|---------|
-| **orgsuite-workspace** | Main professional hub for Working Copy + ChatGPT Codex |
-| **simmple-login** | Official OrgSuite Agent (Cloudflare Workers AI) – see `docs/orgsuite-agent-simmple-login.md` |
-| **orgsuite-marketing-connectors** (private) | Official Spotify Ads/Analytics + Meta Marketing API setup – env vars only, least privilege, audit logging |
-
-## Cloud storage (PSE-100)
-
-| Surface | Status | Path |
-|---------|--------|------|
-| Connector architecture | Completed (docs) | `docs/cloud-connectors.md` |
-| Cloud Storage workplace page | Completed (static) | `cloud-storage/` |
-| Gmail + Outlook mail | Connected | Live Grok connectors |
-| Google Drive (PIP) | Connected | Live PIP Drive identity ORG SUITE |
-| Native Drive MCP + OneDrive | Requires Authorization | Owner Grok connector cards |
-
-## Chat UI Prototype
-
-| Surface | Status | Path |
-|---------|--------|------|
-| OrgSuite Chat UI Prototype | Completed (static) | `chat-ui-prototype/` |
-| Canary Mail channel | Completed in UI / Ready to Configure on device | `docs/chat-ui-prototype.md` |
-
-## Secure Mail
-
-| Service | Status | Doc |
-|---------|--------|-----|
-| Canary Mail (Gmail/Outlook/IMAP client) | Ready to Configure on device | `docs/canary-mail-pro-restore.md` · PSE-62 |
-| Proton Mail + SimpleLogin | Documented (manual) | `docs/secure-mail-proton-simplelogin.md` |
-| Proton Pass | Not connected (no live connector) | Same doc |
-
-Known aliases: `pacerssportsent@pm.me`, `psebank@pm.me`, `igpt.flannels193@8shield.net` (domain 8shield.net).
-
-## Priority Repositories (recommend authorizing in Codex GitHub plugin)
+## Core Hub
 
 | Repository | Purpose |
 |------------|---------|
-| simmple-login | OrgSuite Agent |
-| orgsuite-marketing-connectors | Official marketing connectors (Spotify + Meta) |
-| orgsuite-canary-ios-acknowledgements | Canary Mail iOS license nodes |
-| codex | Main Codex marketing & website foundation |
-| orgsuite-open-source-licenses | Enterprise license attribution |
-| orgsuite-ai-os | Multi-agent Organisation Intelligence Platform |
-| super-grok-office | macOS Office Hub |
-| super-grok / super-grok-app | Grok chat apps |
-| harmony-ai-spotify-agent | Spotify music agent |
-| sophbot / sophbot-sophie-cunningham | Fan experience + WhatsApp |
-| pse-bank-website | PS&E Bank marketing site |
-| pse-wealth-platform | Investment & wealth platform |
-| pse-bank-license-compliance | Bank compliance documentation |
-| orgsuite-scoopz-command-center | Unified AI command center |
-| filelogger-workplace | FileLogger control center |
-| pointgoddess-ai-platform | AI business & marketing platform |
-| adsgpt-psemanagement | AdsGPT landing + Proton/SimpleLogin links |
+| **orgsuite-workspace** | Main professional hub |
+| **simmple-login** | Official OrgSuite Agent |
+| **orgsuite-marketing-connectors** (private) | Spotify + Meta marketing |
 
-## Additional Active Repositories
+## Live Surfaces
 
-| Repository | Purpose |
-|------------|---------|
-| Safari / Nov-Os | Management / AI phone platform |
-| meta-agent / meta-marketing | Meta AI support repos |
-| branded-email-sender | Branded Gmail SMTP sender |
-| on-device-speech-recognition | Voice input marketing site |
-| chrome-credits-open-source | Open-source licenses viewer |
-| apache-2.0-license-kit | License boilerplate kit |
-| collaborative-home-connect | Home device connectivity |
-| nebbote | AI curator & marketing site |
-| kr-management-privacy | Privacy policy pages |
-| gravatar-wordpress-oauth-docs | OAuth documentation |
-| sophie-cunningham-ring-girl | Marketing components |
+| Surface | URL |
+|---------|-----|
+| Production | https://pse-sent.com |
+| KR Management | https://kidrockmanagementteamsent.com |
+| MCP gateway | https://mcp.pse-sent.com/api/mcp |
+| Codex Command Center | https://orgsuite-codex-command-center.vercel.app |
+| Unified AI hub | https://orgsuite-command-center.vercel.app |
 
-## How to connect more repositories in Codex
+## Status Docs
 
-1. Open ChatGPT → Codex → GitHub plugin
-2. Authorize additional repositories from the list above
-3. Prefer starting with the **Priority** group
-4. You can work on one repository at a time or switch context as needed
+| Document | Purpose |
+|----------|---------|
+| [workplace-status.md](workplace-status.md) | Hierarchy + current status |
+| [connectors-status.md](connectors-status.md) | Connector matrix |
+| [canonical-hosts.md](canonical-hosts.md) | Owned hosts |
 
-## Branching Strategy (reminder)
+## Branching
 
 - `main` – production
-- `feat/...` – new features
+- `feat/...` – features
 - `docs/...` – documentation
 - `fix/...` – fixes
-- `chore/...` – maintenance
 
-Always open a Pull Request. Never push directly to `main` for real work.
+Always open a Pull Request for real work. Docs closeouts may land on `main` when the owner directs.

@@ -68,10 +68,15 @@ Grok stays complementary. Server wrapper may call OrgSuite tools. Do not claim G
 
 ```bash
 cp env/meta-grok.env.example .env.local
-# fill secrets on the host only
-docker compose -f docker-compose.meta-workplace.yml up -d
+# fill secrets on the host only, including a unique POSTGRES_PASSWORD
+# .env.local must remain untracked; never paste its values into chat or logs
+docker compose --env-file .env.local -f docker-compose.meta-workplace.yml up -d
 # legal page: http://127.0.0.1:8088/legal/facebook-notices/
 ```
+
+Postgres, Redis and the legal preview bind only to 127.0.0.1. The Compose configuration requires a nonempty POSTGRES_PASSWORD and fails before startup if it is missing. This local kit is not a production deployment.
+
+For an existing Postgres volume, changing the environment variable does not rotate the stored database password. Rotate it through an authorized database administration session and update local configuration together; do not delete the volume to reset it. If the previous example password was ever used, treat it as publicly known.
 
 ## Meta App Dashboard URLs to register later
 

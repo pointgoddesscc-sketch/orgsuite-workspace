@@ -5,7 +5,43 @@
   document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a)return;const h=a.getAttribute('href');if(!h||h.startsWith('http')||h.startsWith('mailto')||h.startsWith('#')||a.target==='_blank')return;go(h,e)});
   addEventListener('popstate',render);
   const hero=(t,d,i)=>`<section class="pagehero"><img class="bg" src="${i}" alt=""><div class="pageheroin"><p class="kicker">Indiana Fevers Management Services</p><h1>${t}</h1><p class="lead">${d||''}</p></div></section>`;
-  const form=(s)=>`<form class="card stack js-form" data-service="${s}"><input name="name" placeholder="Name" required><input type="email" name="email" placeholder="Email" required><textarea name="message" required placeholder="How can the desk help?"></textarea><button class="btn red" type="submit">Submit request</button><p class="js-out muted"></p></form>`;
+  const form=(s)=>`<form class="card stack js-form" data-service="${s}"><input name="name" placeholder="Name" required><input type="email" name="email" placeholder="Email" required><textarea name="message" required placeholder="How can the desk help?"></textarea><button class="btn red" type="submit">Submit request</button><p class="js-out muted" role="status" aria-live="polite"></p></form>`;
+  async function submitInquiry(ev) {
+    ev.preventDefault();
+    const f=ev.currentTarget;
+    if(f.dataset.submitting==='true') return;
+    const output=f.querySelector('.js-out'), button=f.querySelector('button[type="submit"]');
+    const rec=Object.fromEntries(new FormData(f).entries());
+    rec.service=f.dataset.service;
+    rec.id=f.dataset.inquiryId||'IFMS-'+Date.now().toString(36).toUpperCase();
+    f.dataset.inquiryId=rec.id;
+    f.dataset.submitting='true';
+    if(button) button.disabled=true;
+    let savedLocally=false;
+    try {
+      const all=JSON.parse(localStorage.getItem('ifms_inquiries')||'[]');
+      const index=all.findIndex(item=>item.id===rec.id);
+      if(index<0) all.unshift(rec); else all[index]=rec;
+      localStorage.setItem('ifms_inquiries',JSON.stringify(all));
+      savedLocally=true;
+    } catch(e) {}
+    if(output) output.textContent='Sending request…';
+    try {
+      const response=await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(rec)});
+      if(!response.ok) throw new Error('Inquiry delivery failed');
+      const contentType=response.headers.get('content-type')||'';
+      if(!/^application\/(?:[a-z0-9!#$&^_.+-]+\+)?json(?:\s*;|$)/i.test(contentType)) throw new Error('Inquiry acknowledgement missing');
+      const receipt=await response.json();
+      if(!receipt||receipt.ok!==true||(receipt.id!==undefined&&receipt.id!==rec.id)) throw new Error('Inquiry acknowledgement invalid');
+      if(output) output.textContent='Received · '+rec.id;
+      delete f.dataset.inquiryId;
+    } catch(e) {
+      if(output) output.textContent=(savedLocally?'Saved on this device only · '+rec.id+'. ':'')+'Delivery was not confirmed. Your details are still in the form. Submit again to retry.';
+    } finally {
+      delete f.dataset.submitting;
+      if(button) button.disabled=false;
+    }
+  }
   const ncard=n=>`<article class="card lift"><a href="/news/${n.slug}"><img class="media" src="${n.img}" alt=""><div class="pad"><span class="tag">${n.cat}</span><h3>${n.title}</h3><p class="muted">${n.date}${n.time?' · '+n.time:''}</p>${n.src?`<p class="muted">Source: ${n.src}</p>`:''}</div></a></article>`;
   const pcard=p=>`<a class="card lift player" href="/players/${p.slug}"><div class="jersey" style="background-image:linear-gradient(180deg,rgba(200,16,46,.55),rgba(6,10,20,.88)),url('${p.img}')">${p.num}</div><div class="pad"><h3>${p.name}</h3><p class="muted">${p.pos}</p></div></a>`;
   const vcard=v=>`<a class="card lift" href="/videos/${v.id}"><img class="media" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><div class="pad"><span class="tag">${v.cat}</span><h3>${v.title}</h3></div></a>`;
@@ -36,7 +72,7 @@
     else if(p==='/about'||p==='/admin') html=hero('About / Admin','Independent desk. Cloudflare DNS. Owner gates remain owner-only.','/media/indy-skyline.jpg')+`<section class="wrap"><div id="adminHealth" class="card pad"></div></section>`;
     else html=hero(p.slice(1)||'Page','Independent desk.','/media/mgmt-office.jpg')+`<section class="wrap"><a class="btn" href="/">Home</a></section>`;
     app.innerHTML=html;
-    document.querySelectorAll('.js-form').forEach(f=>f.addEventListener('submit',async ev=>{ev.preventDefault();const rec=Object.fromEntries(new FormData(f).entries());rec.service=f.dataset.service;rec.id='IFMS-'+Date.now().toString(36).toUpperCase();const all=JSON.parse(localStorage.getItem('ifms_inquiries')||'[]');all.unshift(rec);localStorage.setItem('ifms_inquiries',JSON.stringify(all));try{await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(rec)})}catch(e){}const o=f.querySelector('.js-out');if(o)o.textContent='Received · '+rec.id;}));
+    document.querySelectorAll('.js-form').forEach(f=>f.addEventListener('submit',submitInquiry));
     const acct=document.getElementById('acct');if(acct){const rows=JSON.parse(localStorage.getItem('ifms_inquiries')||'[]');acct.innerHTML=rows.length?rows.map(x=>`<p>${x.id} · ${x.service}</p>`).join(''):'No requests yet.'}
     const open=document.getElementById('openRiley');if(open)open.onclick=()=>document.getElementById('riley').classList.toggle('hidden');
     fetch('/api/health').then(r=>r.json()).then(j=>{const t=new Date().toLocaleString();const b=document.getElementById('livebar');if(b)b.textContent='Live desk · '+t;const u=document.getElementById('updated');if(u)u.textContent=t;const h=document.getElementById('updHealth')||document.getElementById('adminHealth');if(h)h.textContent=JSON.stringify(j)+' · '+t}).catch(()=>{});
@@ -47,3 +83,4 @@
   const fab=document.getElementById('rileyFab');if(fab)fab.onclick=()=>document.getElementById('riley').classList.toggle('hidden');
   render();
 })();
+

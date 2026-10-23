@@ -69,9 +69,24 @@ Grok stays complementary. Server wrapper may call OrgSuite tools. Do not claim G
 ```bash
 cp env/meta-grok.env.example .env.local
 # fill secrets on the host only
-docker compose -f docker-compose.meta-workplace.yml up -d
+read -r -s -p "Local Postgres password: " POSTGRES_PASSWORD
+printf '\n'
+export POSTGRES_PASSWORD
+docker compose --env-file .env.local -f docker-compose.meta-workplace.yml up -d
 # legal page: http://127.0.0.1:8088/legal/facebook-notices/
 ```
+
+Use a unique local Postgres password. Compose requires `POSTGRES_PASSWORD` and
+fails before starting services if it is missing or empty; the repository no
+longer supplies a shared fallback. Keep it in the host environment or your
+secrets manager, never in tracked files. Existing Postgres volumes retain their
+original password: changing the variable does not rotate a database credential.
+
+The basic Secret Scan checks tracked text files using the existing assignment
+pattern and Markdown exclusion. It reports filenames without matching values,
+and errors fail the check. Run `bash .github/scripts/test-secret-scan.sh` to
+verify required environment references, literal credentials (including Compose
+fallbacks), untracked files, redacted output, and scanner error handling.
 
 ## Meta App Dashboard URLs to register later
 
